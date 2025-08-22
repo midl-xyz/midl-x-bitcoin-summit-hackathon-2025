@@ -29,5 +29,6 @@ One half of the total hackathon prize pool + perks from Midl.
 - Accepted language: Go, Rust, **JavaScript**, Python
 
 ## Resources
-- [bitcoin node for track #2](https://github.com/midl-xyz/bitcoin-asia-bitcoind) – A ready-to-use Bitcoin node setup, specifically configured for Track #2. Use this to run a local or testnet Bitcoin node. Only for advanced usage
+- [MIDL Regtest Mempool.space API](https://mempool.regtest.midl.xyz/docs/api/rest) – For fetching UTXO and transaction data.
+- [bitcoin node for track #1](https://github.com/midl-xyz/bitcoin-asia-bitcoind) – A ready-to-use Bitcoin node setup, specifically configured for Track #1. Use this to run a local or testnet Bitcoin node. Only for advanced usage
 - Address on Bitcoin with large amount of UTXOs: `bcrt1q2sufppgjc3tdgrmwgsvgct92qrjs75nsnjyfu0`
