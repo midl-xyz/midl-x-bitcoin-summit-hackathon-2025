@@ -1,0 +1,33 @@
+{
+  "name": "helios-v3-deploy-midl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@midl-xyz/ethers": "6.13.0-4",
+		"@midl-xyz/hardhat-deploy": "2.0.0-next.64",
+    "@midl-xyz/midl-js-core": "2.0.0-next.54",
+    "hardhat": "^2.22.19",
+    "hardhat-deploy": "^1.0.2"
+  },
+  "dependencies": {
+    "@bitcoinerlab/secp256k1": "^1.2.0",
+    "@ethersproject/address": "^5.8.0",
+    "@types/bluebird": "^3.5.42",
+    "bignumber.js": "^9.3.1",
+    "bip32": "5.0.0-rc.0",
+    "bip39": "^3.1.0",
+    "bluebird": "^3.7.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "viem": "npm:@midl-xyz/midl-viem"
+    }
+  }
+}
