@@ -55,7 +55,7 @@ go mod download
 #### Quick Demo (No Database Required)
 ```bash
 # Start the demo server with sample data
-go run cmd/demo/main.go
+go run cmd/demo/main.go cmd/demo/handlers.go
 
 # Access the demo at http://localhost:8080
 # Swagger documentation at http://localhost:8080/swagger/index.html
