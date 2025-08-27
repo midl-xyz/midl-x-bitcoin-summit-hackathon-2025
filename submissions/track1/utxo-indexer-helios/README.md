@@ -9,9 +9,8 @@ A high-performance Bitcoin UTXO management solution featuring 6 advanced selecti
 
 ## 2. Repository & Demo
 
-- **GitHub Repository:** [https://github.com/helios/utxo-indexer](https://github.com/helios/utxo-indexer)
-- **Demo Link:** `http://localhost:8081` (Run locally with `go run cmd/demo/main.go`)
-- **Live API:** `http://localhost:8080/api/v1` (After setup)
+- **Demo Server:** `http://localhost:8080` (Run locally with `go run cmd/demo/main.go`)
+- **API Endpoints:** Direct access at root path (no /api/v1 prefix)
 
 ## 3. Features & Tech Stack
 
@@ -47,10 +46,8 @@ cd utxo-indexer
 # 2. Install dependencies
 go mod download
 
-# 3. Set up environment variables (optional)
-export DATABASE_URL="postgres://user:pass@localhost:5432/utxo_indexer"
-export REDIS_ADDR="localhost:6379"
-export ALCHEMY_API_KEY="your-alchemy-api-key"  # Optional
+# 3. No database or Redis required for demo!
+# The demo server uses in-memory storage and sample UTXO data
 ```
 
 ### How to Run/Demo
@@ -60,17 +57,17 @@ export ALCHEMY_API_KEY="your-alchemy-api-key"  # Optional
 # Start the demo server with sample data
 go run cmd/demo/main.go
 
-# Access the demo at http://localhost:8081
-# API endpoints available at http://localhost:8081/api/v1
+# Access the demo at http://localhost:8080
+# Swagger documentation at http://localhost:8080/swagger/index.html
 ```
 
-#### Full API Server
+#### Standalone Alchemy Service (Optional)
 ```bash
-# Run the full API server
-go run cmd/api/main.go
+# Set API key and run Alchemy service
+export ALCHEMY_API_KEY="your-api-key"
+go run cmd/alchemy/main.go
 
-# Server runs at http://localhost:8080
-# API documentation at http://localhost:8080/docs
+# Alchemy service runs at http://localhost:8082
 ```
 
 #### Test the Algorithms
@@ -86,10 +83,10 @@ go test ./pkg/selector -bench=.
 
 ```bash
 # 1. Get UTXOs for an address
-curl http://localhost:8081/api/v1/utxos/bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
+curl http://localhost:8080/utxos/bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
 
 # 2. Select UTXOs with specific algorithm
-curl -X POST http://localhost:8081/api/v1/select \
+curl -X POST http://localhost:8080/select \
   -H "Content-Type: application/json" \
   -d '{
     "address": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
@@ -99,7 +96,7 @@ curl -X POST http://localhost:8081/api/v1/select \
   }'
 
 # 3. Multi-address UTXO selection
-curl -X POST http://localhost:8081/api/v1/multi-select \
+curl -X POST http://localhost:8080/multi-select \
   -H "Content-Type: application/json" \
   -d '{
     "addresses": [
@@ -110,6 +107,14 @@ curl -X POST http://localhost:8081/api/v1/multi-select \
     "fee_rate": 20,
     "algorithm": "optimize_fee_6"
   }'
+
+# 4. Get balance for an address
+curl http://localhost:8080/balance/bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
+
+# 5. Refresh UTXOs from Mempool API
+curl -X POST http://localhost:8080/refresh \
+  -H "Content-Type: application/json" \
+  -d '{"address": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"}'
 ```
 
 ## 5. Team Information
