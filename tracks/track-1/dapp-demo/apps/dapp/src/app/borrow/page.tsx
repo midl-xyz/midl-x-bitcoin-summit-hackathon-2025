@@ -205,7 +205,7 @@ export default function BorrowPage() {
 						<div className="w-full rounded-lg shadow-lg">
 							{/* Header */}
 							<div className="bg-bc-yellow border-bc-black rounded-lg px-10 py-2 mb-4 lg:mb-6 shadow-md">
-								<h2 className="text-bc-black font-bold text-lg">TRANSACTION</h2>
+								<h2 className="text-bc-black font-bold text-lg">RECENT TRANSACTIONS</h2>
 							</div>
 							
 							{/* Column Headers */}
