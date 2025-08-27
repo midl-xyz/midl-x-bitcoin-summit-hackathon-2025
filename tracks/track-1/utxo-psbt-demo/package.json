@@ -1,0 +1,32 @@
+{
+  "name": "utxo-psbt-demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@midl/core": "2.0.2",
+    "@midl/executor": "2.0.2",
+    "@midl/executor-react": "2.0.2",
+    "@midl/react": "2.0.2",
+    "@midl/satoshi-kit": "2.0.2",
+    "@tanstack/react-query": "^5.83.0",
+    "bitcoinjs-lib": "7.0.0-rc.0",
+    "next": "15.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.11",
+    "viem": "npm:@midl/viem@^2.21.37",
+    "wagmi": "2.14.16"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}
