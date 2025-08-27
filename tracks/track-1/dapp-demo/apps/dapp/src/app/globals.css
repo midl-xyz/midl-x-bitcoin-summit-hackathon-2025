@@ -1,0 +1,281 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-family-sans: var(--font-lexend), system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #EEEEEE;
+  --foreground: #191818;
+  --card: #FFFFFF;
+  --card-foreground: #191818;
+  --popover: #FFFFFF;
+  --popover-foreground: #191818;
+  --primary: #FFDC69;
+  --primary-foreground: #191818;
+  --secondary: #F5F5F5;
+  --secondary-foreground: #191818;
+  --muted: #F0F0F0;
+  --muted-foreground: #666666;
+  --accent: #EBAD00;
+  --accent-foreground: #191818;
+  --destructive: #FF6B6B;
+  --border: #E0E0E0;
+  --input: #FFFFFF;
+  --ring: #FFDC69;
+  --chart-1: #FFDC69;
+  --chart-2: #EBAD00;
+  --chart-3: #FFB347;
+  --chart-4: #FFA500;
+  --chart-5: #FF8C00;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #191818;
+  --sidebar-primary: #FFDC69;
+  --sidebar-primary-foreground: #191818;
+  --sidebar-accent: #EBAD00;
+  --sidebar-accent-foreground: #191818;
+  --sidebar-border: #E0E0E0;
+  --sidebar-ring: #FFDC69;
+  
+  /* BitCredit Custom Variables */
+  --bc-bg: #EEEEEE;
+  --bc-black: #191818;
+  --bc-card: #FFFFFF;
+  --bc-yellow: #FFDC69;
+  --bc-orange: #EBAD00;
+  --bc-orange-light: #FFB347;
+  --bc-orange-medium: #FFA500;
+  --bc-orange-dark: #FF8C00;
+  --bc-secondary: #F5F5F5;
+  --bc-muted: #F0F0F0;
+  --bc-muted-text: #666666;
+  --bc-red: #FF6B6B;
+  --bc-border: #E0E0E0;
+}
+
+/* Card Animation Styles */
+@keyframes cardPopUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card-animate {
+  animation: cardPopUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.card-animate-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.card-animate-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.card-animate-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.card-animate-delay-4 {
+  animation-delay: 0.4s;
+}
+
+.card-animate-delay-5 {
+  animation-delay: 0.5s;
+}
+
+.card-animate-delay-6 {
+  animation-delay: 0.6s;
+}
+
+.dark {
+  --background: #191818;
+  --foreground: #FFFFFF;
+  --card: #2A2A2A;
+  --card-foreground: #FFFFFF;
+  --popover: #2A2A2A;
+  --popover-foreground: #FFFFFF;
+  --primary: #FFDC69;
+  --primary-foreground: #191818;
+  --secondary: #333333;
+  --secondary-foreground: #FFFFFF;
+  --muted: #333333;
+  --muted-foreground: #CCCCCC;
+  --accent: #EBAD00;
+  --accent-foreground: #191818;
+  --destructive: #FF6B6B;
+  --border: #404040;
+  --input: #2A2A2A;
+  --ring: #FFDC69;
+  --chart-1: #FFDC69;
+  --chart-2: #EBAD00;
+  --chart-3: #FFB347;
+  --chart-4: #FFA500;
+  --chart-5: #FF8C00;
+  --sidebar: #2A2A2A;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #FFDC69;
+  --sidebar-primary-foreground: #191818;
+  --sidebar-accent: #EBAD00;
+  --sidebar-accent-foreground: #191818;
+  --sidebar-border: #404040;
+  --sidebar-ring: #FFDC69;
+  
+  /* BitCredit Custom Variables - Dark Mode */
+  --bc-bg: #191818;
+  --bc-black: #191818;
+  --bc-card: #2A2A2A;
+  --bc-yellow: #FFDC69;
+  --bc-orange: #EBAD00;
+  --bc-orange-light: #FFB347;
+  --bc-orange-medium: #FFA500;
+  --bc-orange-dark: #FF8C00;
+  --bc-secondary: #333333;
+  --bc-muted: #333333;
+  --bc-muted-text: #CCCCCC;
+  --bc-red: #FF6B6B;
+  --bc-border: #404040;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: var(--font-lexend), system-ui, sans-serif !important;
+  }
+  
+  html {
+    font-family: var(--font-lexend), system-ui, sans-serif !important;
+  }
+
+  /* Responsive Typography */
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+  }
+  
+  h2 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+  }
+  
+  h3 {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+  }
+  
+  h4 {
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
+  }
+  
+  p {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl;
+  }
+  
+  .text-xs-responsive {
+    @apply text-xs sm:text-sm md:text-base lg:text-lg;
+  }
+  
+  .text-sm-responsive {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl;
+  }
+  
+  .text-base-responsive {
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl;
+  }
+  
+  .text-lg-responsive {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  .text-xl-responsive {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  .text-2xl-responsive {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  .text-3xl-responsive {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+}
+
+@layer utilities {
+  /* BitCredit Background Colors */
+  .bg-bc-yellow { background-color: var(--bc-yellow); }
+  .bg-bc-orange { background-color: var(--bc-orange); }
+  .bg-bc-black { background-color: var(--bc-black); }
+  .bg-bc-card { background-color: var(--bc-card); }
+  .bg-bc-secondary { background-color: var(--bc-secondary); }
+  .bg-bc-muted { background-color: var(--bc-muted); }
+  
+  /* BitCredit Text Colors */
+  .text-bc-yellow { color: var(--bc-yellow); }
+  .text-bc-orange { color: var(--bc-orange); }
+  .text-bc-black { color: var(--bc-black); }
+  .text-bc-muted { color: var(--bc-muted-text); }
+  
+  /* BitCredit Border Colors */
+  .border-bc-yellow { border: 2px solid var(--bc-yellow); }
+  .border-bc-orange { border: 2px solid var(--bc-orange); }
+  .border-bc-black { border: 2px solid var(--bc-black); }
+  .border-bc-border { border: 2px solid var(--bc-border); }
+  
+  /* BitCredit Ring Colors */
+  .ring-bc-yellow { --tw-ring-color: var(--bc-yellow); }
+  .ring-bc-orange { --tw-ring-color: var(--bc-orange); }
+  
+  /* BitCredit Grid Background */
+  .bg-bc-grid {
+    background-color: var(--bc-card);
+    background-image: 
+      linear-gradient(var(--bc-black) 1px, transparent 1px),
+      linear-gradient(90deg, var(--bc-black) 1px, transparent 1px);
+    background-size: 100px 100px;
+  }
+}

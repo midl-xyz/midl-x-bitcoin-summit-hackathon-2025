@@ -1,0 +1,23 @@
+# UTXO Indexer-Selector Configuration
+
+[bitcoin]
+rpc_url = "http://127.0.0.1:8332"
+rpc_user = "1"
+rpc_password = "1"
+network = "regtest"
+
+[storage]
+db_path = "./utxo_index.db"
+enable_compression = true
+cache_size_mb = 256
+
+[api]
+bind_address = "127.0.0.1"
+port = 3030
+enable_cors = true
+
+[indexer]
+start_height = 0
+batch_size = 10
+poll_interval_secs = 5
+enable_validation = true

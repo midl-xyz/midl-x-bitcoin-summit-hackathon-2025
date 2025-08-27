@@ -1,0 +1,1402 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.3.1_react-dom@19.1.1_react@19.1.1__react@19.1.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/.pnpm/next@15.3.1_react-dom@19.1.1_react@19.1.1__react@19.1.1/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/globals.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700;
+}
+
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.input-field {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.3.1_react-dom@19.1.1_react@19.1.1__react@19.1.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/.pnpm/next@15.3.1_react-dom@19.1.1_react@19.1.1__react@19.1.1/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./node_modules/.pnpm/@midl+satoshi-kit@2.0.2_@midl+connectors@2.0.3_@midl+core@2.0.2_@types+react@19.1.11_bu_0e9e9199a9bb8bbfad7b6804fd315ae3/node_modules/@midl/satoshi-kit/dist/styles.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@keyframes satoshi-kit--ping {
+  75%,100% {
+    transform: scale(2);
+    opacity: 0;
+}
+}
+
+@keyframes satoshi-kit--pulse {
+  50% {
+    opacity: 0.5;
+}
+}
+
+@keyframes satoshi-kit--bounce {
+  0%,100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+}
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+}
+}
+
+@keyframes satoshi-kit--fade-in {
+  from {
+    opacity: 0;
+}
+
+  to {
+    opacity: 1;
+}
+}
+
+@keyframes satoshi-kit--fade-out {
+  from {
+    opacity: 1;
+}
+
+  to {
+    opacity: 0;
+}
+}
+
+@keyframes satoshi-kit--slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(64px);
+}
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+@keyframes satoshi-kit--slide-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+  100% {
+    opacity: 0;
+    transform: translateY(64px);
+}
+}
+
+@keyframes satoshi-kit--slide-in-left {
+  0% {
+    transform: translateX(-100%);
+}
+
+  100% {
+    transform: translateX(0%);
+}
+}
+
+@keyframes satoshi-kit--slide-out-left {
+  0% {
+    transform: translateX(0%);
+}
+
+  100% {
+    transform: translateX(-100%);
+}
+}
+
+@keyframes satoshi-kit--slide-in-right {
+  0% {
+    transform: translateX(100%);
+}
+
+  100% {
+    transform: translateX(0%);
+}
+}
+
+@keyframes satoshi-kit--slide-out-right {
+  0% {
+    transform: translateX(0%);
+}
+
+  100% {
+    transform: translateX(100%);
+}
+}
+
+@keyframes satoshi-kit--collapse-in {
+  0% {
+    height: var(--satoshi-kit--sizes-0);
+}
+
+  100% {
+    height: var(--height);
+}
+}
+
+@keyframes satoshi-kit--collapse-out {
+  0% {
+    height: var(--height);
+}
+
+  100% {
+    height: var(--satoshi-kit--sizes-0);
+}
+}
+
+@keyframes satoshi-kit--fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px);
+}
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+@keyframes satoshi-kit--fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+}
+}
+
+@keyframes satoshi-kit--skeleton-pulse {
+  50% {
+    opacity: 0.5;
+}
+}
+
+@keyframes satoshi-kit--spin {
+  to {
+    transform: rotate(360deg);
+}
+
+  0% {
+    transform: rotate(0deg);
+}
+
+  100% {
+    transform: rotate(360deg);
+}
+}
+
+::-webkit-backdrop {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  border-width: 0px;
+  border-style: solid;
+  border-color: var(--global-color-border, currentColor);
+}
+
+::-webkit-file-upload-button {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  border-width: 0px;
+  border-style: solid;
+  border-color: var(--global-color-border, currentColor);
+}
+
+*[class^="satoshi-kit--"], ::before, ::after, ::backdrop, ::file-selector-button {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  border-width: 0px;
+  border-style: solid;
+  border-color: var(--global-color-border, currentColor);
+}
+
+::-webkit-file-upload-button {
+  appearance: button;
+  -webkit-appearance: button;
+}
+
+button[class^="satoshi-kit--"], input:where([type='button'][class^="satoshi-kit--"], [type='reset'][class^="satoshi-kit--"], [type='submit'])[class^="satoshi-kit--"], ::file-selector-button {
+  -moz-appearance: button;
+       appearance: button;
+  -webkit-appearance: button;
+}
+
+[hidden]:where(:not([hidden='until-found'])):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  display: none !important;
+}
+
+:not(#\#)::-webkit-backdrop {
+  --blur: /*-*/ /*-*/;
+  --brightness: /*-*/ /*-*/;
+  --contrast: /*-*/ /*-*/;
+  --grayscale: /*-*/ /*-*/;
+  --hue-rotate: /*-*/ /*-*/;
+  --invert: /*-*/ /*-*/;
+  --saturate: /*-*/ /*-*/;
+  --sepia: /*-*/ /*-*/;
+  --drop-shadow: /*-*/ /*-*/;
+  --backdrop-blur: /*-*/ /*-*/;
+  --backdrop-brightness: /*-*/ /*-*/;
+  --backdrop-contrast: /*-*/ /*-*/;
+  --backdrop-grayscale: /*-*/ /*-*/;
+  --backdrop-hue-rotate: /*-*/ /*-*/;
+  --backdrop-invert: /*-*/ /*-*/;
+  --backdrop-opacity: /*-*/ /*-*/;
+  --backdrop-saturate: /*-*/ /*-*/;
+  --backdrop-sepia: /*-*/ /*-*/;
+  --gradient-from-position: /*-*/ /*-*/;
+  --gradient-to-position: /*-*/ /*-*/;
+  --gradient-via-position: /*-*/ /*-*/;
+  --scroll-snap-strictness: proximity;
+  --border-spacing-x: 0;
+  --border-spacing-y: 0;
+  --translate-x: 0;
+  --translate-y: 0;
+  --rotate: 0;
+  --rotate-x: 0;
+  --rotate-y: 0;
+  --skew-x: 0;
+  --skew-y: 0;
+  --scale-x: 1;
+  --scale-y: 1;
+}
+
+*:not(#\#),:not(#\#)::before,:not(#\#)::after,:not(#\#)::backdrop {
+  --blur: /*-*/ /*-*/;
+  --brightness: /*-*/ /*-*/;
+  --contrast: /*-*/ /*-*/;
+  --grayscale: /*-*/ /*-*/;
+  --hue-rotate: /*-*/ /*-*/;
+  --invert: /*-*/ /*-*/;
+  --saturate: /*-*/ /*-*/;
+  --sepia: /*-*/ /*-*/;
+  --drop-shadow: /*-*/ /*-*/;
+  --backdrop-blur: /*-*/ /*-*/;
+  --backdrop-brightness: /*-*/ /*-*/;
+  --backdrop-contrast: /*-*/ /*-*/;
+  --backdrop-grayscale: /*-*/ /*-*/;
+  --backdrop-hue-rotate: /*-*/ /*-*/;
+  --backdrop-invert: /*-*/ /*-*/;
+  --backdrop-opacity: /*-*/ /*-*/;
+  --backdrop-saturate: /*-*/ /*-*/;
+  --backdrop-sepia: /*-*/ /*-*/;
+  --gradient-from-position: /*-*/ /*-*/;
+  --gradient-to-position: /*-*/ /*-*/;
+  --gradient-via-position: /*-*/ /*-*/;
+  --scroll-snap-strictness: proximity;
+  --border-spacing-x: 0;
+  --border-spacing-y: 0;
+  --translate-x: 0;
+  --translate-y: 0;
+  --rotate: 0;
+  --rotate-x: 0;
+  --rotate-y: 0;
+  --skew-x: 0;
+  --skew-y: 0;
+  --scale-x: 1;
+  --scale-y: 1;
+}
+
+:where(:root, :host):not(#\#):not(#\#) {
+  --satoshi-kit--aspect-ratios-square: 1 / 1;
+  --satoshi-kit--aspect-ratios-landscape: 4 / 3;
+  --satoshi-kit--aspect-ratios-portrait: 3 / 4;
+  --satoshi-kit--aspect-ratios-wide: 16 / 9;
+  --satoshi-kit--aspect-ratios-ultrawide: 18 / 5;
+  --satoshi-kit--aspect-ratios-golden: 1.618 / 1;
+  --satoshi-kit--shadows-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --satoshi-kit--shadows-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --satoshi-kit--shadows-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --satoshi-kit--shadows-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --satoshi-kit--shadows-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --satoshi-kit--shadows-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --satoshi-kit--shadows-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --satoshi-kit--animations-ping: satoshi-kit--ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  --satoshi-kit--animations-pulse: satoshi-kit--pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --satoshi-kit--animations-bounce: satoshi-kit--bounce 1s infinite;
+  --satoshi-kit--animations-backdrop-in: satoshi-kit--fade-in 250ms var(--satoshi-kit--easings-emphasized-in);
+  --satoshi-kit--animations-backdrop-out: satoshi-kit--fade-out 200ms var(--satoshi-kit--easings-emphasized-out);
+  --satoshi-kit--animations-dialog-in: satoshi-kit--slide-in 400ms var(--satoshi-kit--easings-emphasized-in);
+  --satoshi-kit--animations-dialog-out: satoshi-kit--slide-out 200ms var(--satoshi-kit--easings-emphasized-out);
+  --satoshi-kit--animations-drawer-in-left: satoshi-kit--slide-in-left 400ms var(--satoshi-kit--easings-emphasized-in);
+  --satoshi-kit--animations-drawer-out-left: satoshi-kit--slide-out-left 200ms var(--satoshi-kit--easings-emphasized-out);
+  --satoshi-kit--animations-drawer-in-right: satoshi-kit--slide-in-right 400ms var(--satoshi-kit--easings-emphasized-in);
+  --satoshi-kit--animations-drawer-out-right: satoshi-kit--slide-out-right 200ms var(--satoshi-kit--easings-emphasized-out);
+  --satoshi-kit--animations-skeleton-pulse: satoshi-kit--skeleton-pulse 2s var(--satoshi-kit--easings-satoshi-kit--pulse) infinite;
+  --satoshi-kit--animations-fade-in: satoshi-kit--fade-in 400ms var(--satoshi-kit--easings-emphasized-in);
+  --satoshi-kit--animations-collapse-in: satoshi-kit--collapse-in 250ms var(--satoshi-kit--easings-emphasized-in);
+  --satoshi-kit--animations-collapse-out: satoshi-kit--collapse-out 200ms var(--satoshi-kit--easings-emphasized-out);
+  --satoshi-kit--animations-spin: satoshi-kit--spin 1s linear infinite;
+  --satoshi-kit--blurs-sm: 4px;
+  --satoshi-kit--blurs-base: 8px;
+  --satoshi-kit--blurs-md: 12px;
+  --satoshi-kit--blurs-lg: 16px;
+  --satoshi-kit--blurs-xl: 24px;
+  --satoshi-kit--blurs-2xl: 40px;
+  --satoshi-kit--blurs-3xl: 64px;
+  --satoshi-kit--borders-none: none;
+  --satoshi-kit--colors-black: #000;
+  --satoshi-kit--colors-white: #fff;
+  --satoshi-kit--colors-transparent: rgb(0 0 0 / 0);
+  --satoshi-kit--colors-rose-50: #fff1f2;
+  --satoshi-kit--colors-rose-100: #ffe4e6;
+  --satoshi-kit--colors-rose-200: #fecdd3;
+  --satoshi-kit--colors-rose-300: #fda4af;
+  --satoshi-kit--colors-rose-400: #fb7185;
+  --satoshi-kit--colors-rose-500: #f43f5e;
+  --satoshi-kit--colors-rose-600: #e11d48;
+  --satoshi-kit--colors-rose-700: #be123c;
+  --satoshi-kit--colors-rose-800: #9f1239;
+  --satoshi-kit--colors-rose-900: #881337;
+  --satoshi-kit--colors-rose-950: #4c0519;
+  --satoshi-kit--colors-pink-50: #fdf2f8;
+  --satoshi-kit--colors-pink-100: #fce7f3;
+  --satoshi-kit--colors-pink-200: #fbcfe8;
+  --satoshi-kit--colors-pink-300: #f9a8d4;
+  --satoshi-kit--colors-pink-400: #f472b6;
+  --satoshi-kit--colors-pink-500: #ec4899;
+  --satoshi-kit--colors-pink-600: #db2777;
+  --satoshi-kit--colors-pink-700: #be185d;
+  --satoshi-kit--colors-pink-800: #9d174d;
+  --satoshi-kit--colors-pink-900: #831843;
+  --satoshi-kit--colors-pink-950: #500724;
+  --satoshi-kit--colors-fuchsia-50: #fdf4ff;
+  --satoshi-kit--colors-fuchsia-100: #fae8ff;
+  --satoshi-kit--colors-fuchsia-200: #f5d0fe;
+  --satoshi-kit--colors-fuchsia-300: #f0abfc;
+  --satoshi-kit--colors-fuchsia-400: #e879f9;
+  --satoshi-kit--colors-fuchsia-500: #d946ef;
+  --satoshi-kit--colors-fuchsia-600: #c026d3;
+  --satoshi-kit--colors-fuchsia-700: #a21caf;
+  --satoshi-kit--colors-fuchsia-800: #86198f;
+  --satoshi-kit--colors-fuchsia-900: #701a75;
+  --satoshi-kit--colors-fuchsia-950: #4a044e;
+  --satoshi-kit--colors-purple-50: #faf5ff;
+  --satoshi-kit--colors-purple-100: #f3e8ff;
+  --satoshi-kit--colors-purple-200: #e9d5ff;
+  --satoshi-kit--colors-purple-300: #d8b4fe;
+  --satoshi-kit--colors-purple-400: #c084fc;
+  --satoshi-kit--colors-purple-500: #a855f7;
+  --satoshi-kit--colors-purple-600: #9333ea;
+  --satoshi-kit--colors-purple-700: #7e22ce;
+  --satoshi-kit--colors-purple-800: #6b21a8;
+  --satoshi-kit--colors-purple-900: #581c87;
+  --satoshi-kit--colors-purple-950: #3b0764;
+  --satoshi-kit--colors-violet-50: #f5f3ff;
+  --satoshi-kit--colors-violet-100: #ede9fe;
+  --satoshi-kit--colors-violet-200: #ddd6fe;
+  --satoshi-kit--colors-violet-300: #c4b5fd;
+  --satoshi-kit--colors-violet-400: #a78bfa;
+  --satoshi-kit--colors-violet-500: #8b5cf6;
+  --satoshi-kit--colors-violet-600: #7c3aed;
+  --satoshi-kit--colors-violet-700: #6d28d9;
+  --satoshi-kit--colors-violet-800: #5b21b6;
+  --satoshi-kit--colors-violet-900: #4c1d95;
+  --satoshi-kit--colors-violet-950: #2e1065;
+  --satoshi-kit--colors-indigo-50: #eef2ff;
+  --satoshi-kit--colors-indigo-100: #e0e7ff;
+  --satoshi-kit--colors-indigo-200: #c7d2fe;
+  --satoshi-kit--colors-indigo-300: #a5b4fc;
+  --satoshi-kit--colors-indigo-400: #818cf8;
+  --satoshi-kit--colors-indigo-500: #6366f1;
+  --satoshi-kit--colors-indigo-600: #4f46e5;
+  --satoshi-kit--colors-indigo-700: #4338ca;
+  --satoshi-kit--colors-indigo-800: #3730a3;
+  --satoshi-kit--colors-indigo-900: #312e81;
+  --satoshi-kit--colors-indigo-950: #1e1b4b;
+  --satoshi-kit--colors-blue-50: #eff6ff;
+  --satoshi-kit--colors-blue-100: #dbeafe;
+  --satoshi-kit--colors-blue-200: #bfdbfe;
+  --satoshi-kit--colors-blue-300: #93c5fd;
+  --satoshi-kit--colors-blue-400: #60a5fa;
+  --satoshi-kit--colors-blue-500: #3b82f6;
+  --satoshi-kit--colors-blue-600: #2563eb;
+  --satoshi-kit--colors-blue-700: #1d4ed8;
+  --satoshi-kit--colors-blue-800: #1e40af;
+  --satoshi-kit--colors-blue-900: #1e3a8a;
+  --satoshi-kit--colors-blue-950: #172554;
+  --satoshi-kit--colors-sky-50: #f0f9ff;
+  --satoshi-kit--colors-sky-100: #e0f2fe;
+  --satoshi-kit--colors-sky-200: #bae6fd;
+  --satoshi-kit--colors-sky-300: #7dd3fc;
+  --satoshi-kit--colors-sky-400: #38bdf8;
+  --satoshi-kit--colors-sky-500: #0ea5e9;
+  --satoshi-kit--colors-sky-600: #0284c7;
+  --satoshi-kit--colors-sky-700: #0369a1;
+  --satoshi-kit--colors-sky-800: #075985;
+  --satoshi-kit--colors-sky-900: #0c4a6e;
+  --satoshi-kit--colors-sky-950: #082f49;
+  --satoshi-kit--colors-cyan-50: #ecfeff;
+  --satoshi-kit--colors-cyan-100: #cffafe;
+  --satoshi-kit--colors-cyan-200: #a5f3fc;
+  --satoshi-kit--colors-cyan-300: #67e8f9;
+  --satoshi-kit--colors-cyan-400: #22d3ee;
+  --satoshi-kit--colors-cyan-500: #06b6d4;
+  --satoshi-kit--colors-cyan-600: #0891b2;
+  --satoshi-kit--colors-cyan-700: #0e7490;
+  --satoshi-kit--colors-cyan-800: #155e75;
+  --satoshi-kit--colors-cyan-900: #164e63;
+  --satoshi-kit--colors-cyan-950: #083344;
+  --satoshi-kit--colors-teal-50: #f0fdfa;
+  --satoshi-kit--colors-teal-100: #ccfbf1;
+  --satoshi-kit--colors-teal-200: #99f6e4;
+  --satoshi-kit--colors-teal-300: #5eead4;
+  --satoshi-kit--colors-teal-400: #2dd4bf;
+  --satoshi-kit--colors-teal-500: #14b8a6;
+  --satoshi-kit--colors-teal-600: #0d9488;
+  --satoshi-kit--colors-teal-700: #0f766e;
+  --satoshi-kit--colors-teal-800: #115e59;
+  --satoshi-kit--colors-teal-900: #134e4a;
+  --satoshi-kit--colors-teal-950: #042f2e;
+  --satoshi-kit--colors-emerald-50: #ecfdf5;
+  --satoshi-kit--colors-emerald-100: #d1fae5;
+  --satoshi-kit--colors-emerald-200: #a7f3d0;
+  --satoshi-kit--colors-emerald-300: #6ee7b7;
+  --satoshi-kit--colors-emerald-400: #34d399;
+  --satoshi-kit--colors-emerald-500: #10b981;
+  --satoshi-kit--colors-emerald-600: #059669;
+  --satoshi-kit--colors-emerald-700: #047857;
+  --satoshi-kit--colors-emerald-800: #065f46;
+  --satoshi-kit--colors-emerald-900: #064e3b;
+  --satoshi-kit--colors-emerald-950: #022c22;
+  --satoshi-kit--colors-green-50: #f0fdf4;
+  --satoshi-kit--colors-green-100: #dcfce7;
+  --satoshi-kit--colors-green-200: #bbf7d0;
+  --satoshi-kit--colors-green-300: #86efac;
+  --satoshi-kit--colors-green-400: #4ade80;
+  --satoshi-kit--colors-green-500: #22c55e;
+  --satoshi-kit--colors-green-600: #16a34a;
+  --satoshi-kit--colors-green-700: #15803d;
+  --satoshi-kit--colors-green-800: #166534;
+  --satoshi-kit--colors-green-900: #14532d;
+  --satoshi-kit--colors-green-950: #052e16;
+  --satoshi-kit--colors-lime-50: #f7fee7;
+  --satoshi-kit--colors-lime-100: #ecfccb;
+  --satoshi-kit--colors-lime-200: #d9f99d;
+  --satoshi-kit--colors-lime-300: #bef264;
+  --satoshi-kit--colors-lime-400: #a3e635;
+  --satoshi-kit--colors-lime-500: #84cc16;
+  --satoshi-kit--colors-lime-600: #65a30d;
+  --satoshi-kit--colors-lime-700: #4d7c0f;
+  --satoshi-kit--colors-lime-800: #3f6212;
+  --satoshi-kit--colors-lime-900: #365314;
+  --satoshi-kit--colors-lime-950: #1a2e05;
+  --satoshi-kit--colors-yellow-50: #fefce8;
+  --satoshi-kit--colors-yellow-100: #fef9c3;
+  --satoshi-kit--colors-yellow-200: #fef08a;
+  --satoshi-kit--colors-yellow-300: #fde047;
+  --satoshi-kit--colors-yellow-400: #facc15;
+  --satoshi-kit--colors-yellow-500: #eab308;
+  --satoshi-kit--colors-yellow-600: #ca8a04;
+  --satoshi-kit--colors-yellow-700: #a16207;
+  --satoshi-kit--colors-yellow-800: #854d0e;
+  --satoshi-kit--colors-yellow-900: #713f12;
+  --satoshi-kit--colors-yellow-950: #422006;
+  --satoshi-kit--colors-amber-50: #fffbeb;
+  --satoshi-kit--colors-amber-100: #fef3c7;
+  --satoshi-kit--colors-amber-200: #fde68a;
+  --satoshi-kit--colors-amber-300: #fcd34d;
+  --satoshi-kit--colors-amber-400: #fbbf24;
+  --satoshi-kit--colors-amber-500: #f59e0b;
+  --satoshi-kit--colors-amber-600: #d97706;
+  --satoshi-kit--colors-amber-700: #b45309;
+  --satoshi-kit--colors-amber-800: #92400e;
+  --satoshi-kit--colors-amber-900: #78350f;
+  --satoshi-kit--colors-amber-950: #451a03;
+  --satoshi-kit--colors-orange-50: #fff7ed;
+  --satoshi-kit--colors-orange-100: #ffedd5;
+  --satoshi-kit--colors-orange-200: #fed7aa;
+  --satoshi-kit--colors-orange-300: #fdba74;
+  --satoshi-kit--colors-orange-400: #fb923c;
+  --satoshi-kit--colors-orange-500: #f97316;
+  --satoshi-kit--colors-orange-600: #ea580c;
+  --satoshi-kit--colors-orange-700: #c2410c;
+  --satoshi-kit--colors-orange-800: #9a3412;
+  --satoshi-kit--colors-orange-900: #7c2d12;
+  --satoshi-kit--colors-orange-950: #431407;
+  --satoshi-kit--colors-red-50: #fef2f2;
+  --satoshi-kit--colors-red-100: #fee2e2;
+  --satoshi-kit--colors-red-200: #fecaca;
+  --satoshi-kit--colors-red-300: #fca5a5;
+  --satoshi-kit--colors-red-400: #f87171;
+  --satoshi-kit--colors-red-500: #ef4444;
+  --satoshi-kit--colors-red-600: #dc2626;
+  --satoshi-kit--colors-red-700: #b91c1c;
+  --satoshi-kit--colors-red-800: #991b1b;
+  --satoshi-kit--colors-red-900: #7f1d1d;
+  --satoshi-kit--colors-red-950: #450a0a;
+  --satoshi-kit--colors-stone-50: #fafaf9;
+  --satoshi-kit--colors-stone-100: #f5f5f4;
+  --satoshi-kit--colors-stone-200: #e7e5e4;
+  --satoshi-kit--colors-stone-300: #d6d3d1;
+  --satoshi-kit--colors-stone-400: #a8a29e;
+  --satoshi-kit--colors-stone-500: #78716c;
+  --satoshi-kit--colors-stone-600: #57534e;
+  --satoshi-kit--colors-stone-700: #44403c;
+  --satoshi-kit--colors-stone-800: #292524;
+  --satoshi-kit--colors-stone-900: #1c1917;
+  --satoshi-kit--colors-stone-950: #0c0a09;
+  --satoshi-kit--colors-zinc-50: #fafafa;
+  --satoshi-kit--colors-zinc-100: #f4f4f5;
+  --satoshi-kit--colors-zinc-200: #e4e4e7;
+  --satoshi-kit--colors-zinc-300: #d4d4d8;
+  --satoshi-kit--colors-zinc-400: #a1a1aa;
+  --satoshi-kit--colors-zinc-500: #71717a;
+  --satoshi-kit--colors-zinc-600: #52525b;
+  --satoshi-kit--colors-zinc-700: #3f3f46;
+  --satoshi-kit--colors-zinc-800: #27272a;
+  --satoshi-kit--colors-zinc-900: #18181b;
+  --satoshi-kit--colors-zinc-950: #09090b;
+  --satoshi-kit--colors-slate-50: #f8fafc;
+  --satoshi-kit--colors-slate-100: #f1f5f9;
+  --satoshi-kit--colors-slate-200: #e2e8f0;
+  --satoshi-kit--colors-slate-300: #cbd5e1;
+  --satoshi-kit--colors-slate-400: #94a3b8;
+  --satoshi-kit--colors-slate-500: #64748b;
+  --satoshi-kit--colors-slate-600: #475569;
+  --satoshi-kit--colors-slate-700: #334155;
+  --satoshi-kit--colors-slate-800: #1e293b;
+  --satoshi-kit--colors-slate-900: #0f172a;
+  --satoshi-kit--colors-slate-950: #020617;
+  --satoshi-kit--colors-current: currentColor;
+  --satoshi-kit--colors-neutral-50: #FDFDFD;
+  --satoshi-kit--colors-neutral-100: #F0F0F0;
+  --satoshi-kit--colors-neutral-200: #e7e7e7;
+  --satoshi-kit--colors-neutral-300: #CBCBCB;
+  --satoshi-kit--colors-neutral-400: #a3a3a3;
+  --satoshi-kit--colors-neutral-500: #666666;
+  --satoshi-kit--colors-neutral-600: #333333;
+  --satoshi-kit--colors-neutral-700: #202020;
+  --satoshi-kit--colors-neutral-800: #0E0E0E;
+  --satoshi-kit--colors-neutral-900: #171717;
+  --satoshi-kit--colors-neutral-950: #0a0a0a;
+  --satoshi-kit--colors-neutral-a100: #F0F0F0CC;
+  --satoshi-kit--colors-neutral-a800: #0E0E0ECC;
+  --satoshi-kit--colors-gray-50: #f9fafb;
+  --satoshi-kit--colors-gray-100: #f3f4f6;
+  --satoshi-kit--colors-gray-200: #e5e7eb;
+  --satoshi-kit--colors-gray-300: #d1d5db;
+  --satoshi-kit--colors-gray-400: #9ca3af;
+  --satoshi-kit--colors-gray-500: #6b7280;
+  --satoshi-kit--colors-gray-600: #4b5563;
+  --satoshi-kit--colors-gray-700: #374151;
+  --satoshi-kit--colors-gray-800: #1f2937;
+  --satoshi-kit--colors-gray-900: #111827;
+  --satoshi-kit--colors-gray-950: #030712;
+  --satoshi-kit--colors-gray-a3: #CBCBCB;
+  --satoshi-kit--colors-gray-a7: #666666;
+  --satoshi-kit--durations-fastest: 50ms;
+  --satoshi-kit--durations-faster: 100ms;
+  --satoshi-kit--durations-fast: 150ms;
+  --satoshi-kit--durations-normal: 200ms;
+  --satoshi-kit--durations-slow: 300ms;
+  --satoshi-kit--durations-slower: 400ms;
+  --satoshi-kit--durations-slowest: 500ms;
+  --satoshi-kit--easings-linear: linear;
+  --satoshi-kit--easings-in: cubic-bezier(0.4, 0, 1, 1);
+  --satoshi-kit--easings-out: cubic-bezier(0, 0, 0.2, 1);
+  --satoshi-kit--easings-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --satoshi-kit--easings-pulse: cubic-bezier(0.4, 0.0, 0.6, 1.0);
+  --satoshi-kit--easings-default: cubic-bezier(0.2, 0.0, 0, 1.0);
+  --satoshi-kit--easings-emphasized-in: cubic-bezier(0.05, 0.7, 0.1, 1.0);
+  --satoshi-kit--easings-emphasized-out: cubic-bezier(0.3, 0.0, 0.8, 0.15);
+  --satoshi-kit--font-sizes-2xs: 0.5rem;
+  --satoshi-kit--font-sizes-xs: 0.75rem;
+  --satoshi-kit--font-sizes-sm: 0.875rem;
+  --satoshi-kit--font-sizes-md: 1rem;
+  --satoshi-kit--font-sizes-lg: 1.125rem;
+  --satoshi-kit--font-sizes-xl: 1.25rem;
+  --satoshi-kit--font-sizes-2xl: 1.5rem;
+  --satoshi-kit--font-sizes-3xl: 1.875rem;
+  --satoshi-kit--font-sizes-4xl: 2.25rem;
+  --satoshi-kit--font-sizes-5xl: 3rem;
+  --satoshi-kit--font-sizes-6xl: 3.75rem;
+  --satoshi-kit--font-sizes-7xl: 4.5rem;
+  --satoshi-kit--font-sizes-8xl: 6rem;
+  --satoshi-kit--font-sizes-9xl: 8rem;
+  --satoshi-kit--font-weights-thin: 100;
+  --satoshi-kit--font-weights-extralight: 200;
+  --satoshi-kit--font-weights-light: 300;
+  --satoshi-kit--font-weights-normal: 400;
+  --satoshi-kit--font-weights-medium: 500;
+  --satoshi-kit--font-weights-semibold: 600;
+  --satoshi-kit--font-weights-bold: 700;
+  --satoshi-kit--font-weights-extrabold: 800;
+  --satoshi-kit--font-weights-black: 900;
+  --satoshi-kit--fonts-body: Inter, sans-serif;
+  --satoshi-kit--fonts-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --satoshi-kit--fonts-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --satoshi-kit--fonts-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --satoshi-kit--letter-spacings-tighter: -0.05em;
+  --satoshi-kit--letter-spacings-tight: -0.025em;
+  --satoshi-kit--letter-spacings-normal: 0em;
+  --satoshi-kit--letter-spacings-wide: 0.025em;
+  --satoshi-kit--letter-spacings-wider: 0.05em;
+  --satoshi-kit--letter-spacings-widest: 0.1em;
+  --satoshi-kit--line-heights-snug: 1.375;
+  --satoshi-kit--line-heights-none: 1;
+  --satoshi-kit--line-heights-tight: 1.25;
+  --satoshi-kit--line-heights-normal: 1.5;
+  --satoshi-kit--line-heights-relaxed: 1.75;
+  --satoshi-kit--line-heights-loose: 2;
+  --satoshi-kit--radii-none: 0;
+  --satoshi-kit--radii-2xs: 0.0625rem;
+  --satoshi-kit--radii-xs: 0.125rem;
+  --satoshi-kit--radii-sm: 0.25rem;
+  --satoshi-kit--radii-md: 0.375rem;
+  --satoshi-kit--radii-lg: 0.5rem;
+  --satoshi-kit--radii-xl: 0.75rem;
+  --satoshi-kit--radii-2xl: 1rem;
+  --satoshi-kit--radii-3xl: 1.5rem;
+  --satoshi-kit--radii-4xl: 2rem;
+  --satoshi-kit--radii-5xl: 2.5rem;
+  --satoshi-kit--radii-6xl: 3rem;
+  --satoshi-kit--radii-7xl: 3.5rem;
+  --satoshi-kit--radii-8xl: 4rem;
+  --satoshi-kit--radii-9xl: 4.5rem;
+  --satoshi-kit--radii-10xl: 5rem;
+  --satoshi-kit--radii-full: 9999px;
+  --satoshi-kit--sizes-0: 0rem;
+  --satoshi-kit--sizes-1: 0.25rem;
+  --satoshi-kit--sizes-2: 0.5rem;
+  --satoshi-kit--sizes-3: 0.75rem;
+  --satoshi-kit--sizes-4: 1rem;
+  --satoshi-kit--sizes-5: 1.25rem;
+  --satoshi-kit--sizes-6: 1.5rem;
+  --satoshi-kit--sizes-7: 1.75rem;
+  --satoshi-kit--sizes-8: 2rem;
+  --satoshi-kit--sizes-9: 2.25rem;
+  --satoshi-kit--sizes-10: 2.5rem;
+  --satoshi-kit--sizes-11: 2.75rem;
+  --satoshi-kit--sizes-12: 3rem;
+  --satoshi-kit--sizes-14: 3.5rem;
+  --satoshi-kit--sizes-16: 4rem;
+  --satoshi-kit--sizes-20: 5rem;
+  --satoshi-kit--sizes-24: 6rem;
+  --satoshi-kit--sizes-28: 7rem;
+  --satoshi-kit--sizes-32: 8rem;
+  --satoshi-kit--sizes-36: 9rem;
+  --satoshi-kit--sizes-40: 10rem;
+  --satoshi-kit--sizes-44: 11rem;
+  --satoshi-kit--sizes-48: 12rem;
+  --satoshi-kit--sizes-52: 13rem;
+  --satoshi-kit--sizes-56: 14rem;
+  --satoshi-kit--sizes-60: 15rem;
+  --satoshi-kit--sizes-64: 16rem;
+  --satoshi-kit--sizes-72: 18rem;
+  --satoshi-kit--sizes-80: 20rem;
+  --satoshi-kit--sizes-96: 24rem;
+  --satoshi-kit--sizes-prose: 65ch;
+  --satoshi-kit--sizes-0\.5: 0.125rem;
+  --satoshi-kit--sizes-1\.5: 0.375rem;
+  --satoshi-kit--sizes-2\.5: 0.625rem;
+  --satoshi-kit--sizes-3\.5: 0.875rem;
+  --satoshi-kit--sizes-4\.5: 1.125rem;
+  --satoshi-kit--sizes-2xs: 16rem;
+  --satoshi-kit--sizes-xs: 20rem;
+  --satoshi-kit--sizes-sm: 24rem;
+  --satoshi-kit--sizes-md: 28rem;
+  --satoshi-kit--sizes-lg: 32rem;
+  --satoshi-kit--sizes-xl: 36rem;
+  --satoshi-kit--sizes-2xl: 42rem;
+  --satoshi-kit--sizes-3xl: 48rem;
+  --satoshi-kit--sizes-4xl: 56rem;
+  --satoshi-kit--sizes-5xl: 64rem;
+  --satoshi-kit--sizes-6xl: 72rem;
+  --satoshi-kit--sizes-7xl: 80rem;
+  --satoshi-kit--sizes-8xl: 90rem;
+  --satoshi-kit--sizes-full: 100%;
+  --satoshi-kit--sizes-min: min-content;
+  --satoshi-kit--sizes-max: max-content;
+  --satoshi-kit--sizes-fit: fit-content;
+  --satoshi-kit--sizes-breakpoint-sm: 640px;
+  --satoshi-kit--sizes-breakpoint-md: 768px;
+  --satoshi-kit--sizes-breakpoint-lg: 1024px;
+  --satoshi-kit--sizes-breakpoint-xl: 1280px;
+  --satoshi-kit--sizes-breakpoint-2xl: 1536px;
+  --satoshi-kit--spacing-0: 0rem;
+  --satoshi-kit--spacing-1: 0.25rem;
+  --satoshi-kit--spacing-2: 0.5rem;
+  --satoshi-kit--spacing-3: 0.75rem;
+  --satoshi-kit--spacing-4: 1rem;
+  --satoshi-kit--spacing-5: 1.25rem;
+  --satoshi-kit--spacing-6: 1.5rem;
+  --satoshi-kit--spacing-7: 1.75rem;
+  --satoshi-kit--spacing-8: 2rem;
+  --satoshi-kit--spacing-9: 2.25rem;
+  --satoshi-kit--spacing-10: 2.5rem;
+  --satoshi-kit--spacing-11: 2.75rem;
+  --satoshi-kit--spacing-12: 3rem;
+  --satoshi-kit--spacing-14: 3.5rem;
+  --satoshi-kit--spacing-16: 4rem;
+  --satoshi-kit--spacing-20: 5rem;
+  --satoshi-kit--spacing-24: 6rem;
+  --satoshi-kit--spacing-28: 7rem;
+  --satoshi-kit--spacing-32: 8rem;
+  --satoshi-kit--spacing-36: 9rem;
+  --satoshi-kit--spacing-40: 10rem;
+  --satoshi-kit--spacing-44: 11rem;
+  --satoshi-kit--spacing-48: 12rem;
+  --satoshi-kit--spacing-52: 13rem;
+  --satoshi-kit--spacing-56: 14rem;
+  --satoshi-kit--spacing-60: 15rem;
+  --satoshi-kit--spacing-64: 16rem;
+  --satoshi-kit--spacing-72: 18rem;
+  --satoshi-kit--spacing-80: 20rem;
+  --satoshi-kit--spacing-96: 24rem;
+  --satoshi-kit--spacing-0\.5: 0.125rem;
+  --satoshi-kit--spacing-1\.5: 0.375rem;
+  --satoshi-kit--spacing-2\.5: 0.625rem;
+  --satoshi-kit--spacing-3\.5: 0.875rem;
+  --satoshi-kit--spacing-4\.5: 1.125rem;
+  --satoshi-kit--z-index-hide: -1;
+  --satoshi-kit--z-index-base: 0;
+  --satoshi-kit--z-index-docked: 10;
+  --satoshi-kit--z-index-dropdown: 1000;
+  --satoshi-kit--z-index-sticky: 1100;
+  --satoshi-kit--z-index-banner: 1200;
+  --satoshi-kit--z-index-overlay: 1300;
+  --satoshi-kit--z-index-modal: 1400;
+  --satoshi-kit--z-index-popover: 1500;
+  --satoshi-kit--z-index-skip-link: 1600;
+  --satoshi-kit--z-index-toast: 1700;
+  --satoshi-kit--z-index-tooltip: 1800;
+  --satoshi-kit--breakpoints-sm: 640px;
+  --satoshi-kit--breakpoints-md: 768px;
+  --satoshi-kit--breakpoints-lg: 1024px;
+  --satoshi-kit--breakpoints-xl: 1280px;
+  --satoshi-kit--breakpoints-2xl: 1536px;
+}
+
+:where(:root, .light):not(#\#):not(#\#) {
+  --satoshi-kit--colors-bg-default: var(--satoshi-kit--colors-neutral-100);
+  --satoshi-kit--colors-bg-canvas: var(--satoshi-kit--colors-neutral-50);
+  --satoshi-kit--colors-bg-hover: var(--satoshi-kit--colors-neutral-200);
+  --satoshi-kit--colors-bg-subtle: var(--satoshi-kit--colors-neutral-100);
+  --satoshi-kit--colors-bg-emphasized: var(--satoshi-kit--colors-neutral-700);
+  --satoshi-kit--colors-fg-default: var(--satoshi-kit--colors-neutral-600);
+  --satoshi-kit--colors-text-muted: var(--satoshi-kit--colors-neutral-500);
+  --satoshi-kit--colors-text-on-emphasized-default: var(--satoshi-kit--colors-neutral-50);
+  --satoshi-kit--colors-text-on-emphasized-muted: var(--satoshi-kit--colors-neutral-400)
+}
+
+.dark:not(#\#):not(#\#) {
+  --satoshi-kit--colors-bg-default: var(--satoshi-kit--colors-neutral-700);
+  --satoshi-kit--colors-bg-canvas: var(--satoshi-kit--colors-neutral-800);
+  --satoshi-kit--colors-bg-hover: var(--satoshi-kit--colors-neutral-600);
+  --satoshi-kit--colors-bg-subtle: var(--satoshi-kit--colors-neutral-800);
+  --satoshi-kit--colors-bg-emphasized: var(--satoshi-kit--colors-neutral-700);
+  --satoshi-kit--colors-fg-default: var(--satoshi-kit--colors-neutral-300);
+  --satoshi-kit--colors-text-muted: var(--satoshi-kit--colors-neutral-400);
+  --satoshi-kit--colors-text-on-emphasized-default: var(--satoshi-kit--colors-neutral-200);
+  --satoshi-kit--colors-text-on-emphasized-muted: var(--satoshi-kit--colors-neutral-500)
+}
+
+.satoshi-kit--spinner:not(#\#):not(#\#):not(#\#) {
+  display: inline-block;
+  color: var(--satoshi-kit--colors-color-palette-default);
+  width: var(--size);
+  height: var(--size);
+  animation: var(--satoshi-kit--animations-spin);
+  animation-duration: 1s;
+}
+
+.satoshi-kit--button:not(#\#):not(#\#):not(#\#) {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  border-radius: var(--satoshi-kit--radii-10xl);
+  cursor: pointer;
+  display: inline-flex;
+  isolation: isolate;
+  min-width: var(--satoshi-kit--sizes-0);
+  outline: var(--satoshi-kit--borders-none);
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  align-items: center;
+  font-weight: var(--satoshi-kit--font-weights-semibold);
+  justify-content: center;
+  --transition-duration: var(--satoshi-kit--durations-normal);
+  transition-duration: var(--satoshi-kit--durations-normal);
+  --transition-prop: background, border-color, color, box-shadow;
+  transition-property: background, border-color, color, box-shadow;
+  --transition-easing: var(--satoshi-kit--easings-default);
+  transition-timing-function: var(--satoshi-kit--easings-default);
+}
+
+.satoshi-kit--button:is([hidden]):not(#\#):not(#\#):not(#\#) {
+  display: none;
+}
+
+.satoshi-kit--button:not(#\#):not(#\#):not(#\#) :where(svg) {
+  width: 1.1em;
+  height: 1.1em;
+  font-size: 1.1em;
+}
+
+.satoshi-kit--spinner--size_md:not(#\#):not(#\#):not(#\#):not(#\#) {
+  --size: var(--satoshi-kit--sizes-6);
+}
+
+.satoshi-kit--button--variant_solid:not(#\#):not(#\#):not(#\#):not(#\#) {
+  background: var(--satoshi-kit--colors-bg-default);
+  color: var(--satoshi-kit--colors-fg-default);
+}
+
+.satoshi-kit--button--variant_solid:is(:disabled, [disabled], [data-disabled]):not(#\#):not(#\#):not(#\#):not(#\#) {
+  color: fg.disabled;
+  background: bg.disabled;
+  cursor: not-allowed;
+}
+
+.satoshi-kit--button--variant_solid:is(:focus-visible, [data-focus-visible]):not(#\#):not(#\#):not(#\#):not(#\#) {
+  outline: 2px solid;
+  outline-offset: 2px;
+  outline-color: var(--satoshi-kit--colors-color-palette-default);
+}
+
+.satoshi-kit--button--size_md:not(#\#):not(#\#):not(#\#):not(#\#) {
+  height: var(--satoshi-kit--sizes-11);
+  min-width: var(--satoshi-kit--sizes-10);
+  font-family: var(--satoshi-kit--fonts-body);
+  font-size: var(--satoshi-kit--font-sizes-sm);
+  font-weight: var(--satoshi-kit--font-weights-medium);
+  line-height: var(--satoshi-kit--line-heights-normal);
+  padding-inline: var(--satoshi-kit--spacing-6);
+  gap: var(--satoshi-kit--spacing-2);
+}
+
+.satoshi-kit--button--variant_outline:not(#\#):not(#\#):not(#\#):not(#\#) {
+  background: var(--satoshi-kit--colors-transparent);
+  color: var(--satoshi-kit--colors-fg-default);
+  border: 1px solid;
+  border-color: currentColor;
+}
+
+.satoshi-kit--button--size_sm:not(#\#):not(#\#):not(#\#):not(#\#) {
+  height: var(--satoshi-kit--sizes-8);
+  min-width: var(--satoshi-kit--sizes-8);
+  line-height: 1.25rem;
+  font-size: var(--satoshi-kit--font-sizes-sm);
+  font-family: var(--satoshi-kit--fonts-body);
+  font-weight: var(--satoshi-kit--font-weights-normal);
+  padding-inline: var(--satoshi-kit--spacing-4);
+  gap: var(--satoshi-kit--spacing-2);
+}
+
+.satoshi-kit--button--variant_link:not(#\#):not(#\#):not(#\#):not(#\#),.satoshi-kit--button--variant_ghost:not(#\#):not(#\#):not(#\#):not(#\#) {
+  background: var(--satoshi-kit--colors-transparent);
+  color: var(--satoshi-kit--colors-fg-default);
+}
+
+.satoshi-kit--button--variant_ghost:not(#\#):not(#\#):not(#\#):not(#\#) {
+  border-radius: var(--satoshi-kit--radii-md);
+  --satoshi-kit--colors-color-palette-50: var(--satoshi-kit--colors-gray-50);
+  --satoshi-kit--colors-color-palette-100: var(--satoshi-kit--colors-gray-100);
+  --satoshi-kit--colors-color-palette-200: var(--satoshi-kit--colors-gray-200);
+  --satoshi-kit--colors-color-palette-300: var(--satoshi-kit--colors-gray-300);
+  --satoshi-kit--colors-color-palette-400: var(--satoshi-kit--colors-gray-400);
+  --satoshi-kit--colors-color-palette-500: var(--satoshi-kit--colors-gray-500);
+  --satoshi-kit--colors-color-palette-600: var(--satoshi-kit--colors-gray-600);
+  --satoshi-kit--colors-color-palette-700: var(--satoshi-kit--colors-gray-700);
+  --satoshi-kit--colors-color-palette-800: var(--satoshi-kit--colors-gray-800);
+  --satoshi-kit--colors-color-palette-900: var(--satoshi-kit--colors-gray-900);
+  --satoshi-kit--colors-color-palette-950: var(--satoshi-kit--colors-gray-950);
+  --satoshi-kit--colors-color-palette-a3: var(--satoshi-kit--colors-gray-a3);
+  --satoshi-kit--colors-color-palette-a7: var(--satoshi-kit--colors-gray-a7);
+}
+
+.satoshi-kit--button--variant_ghost:is([aria-selected=true], [data-selected]):not(#\#):not(#\#):not(#\#):not(#\#) {
+  background: var(--satoshi-kit--colors-color-palette-a3);
+}
+
+.satoshi-kit--button--variant_ghost:is(:disabled, [disabled], [data-disabled]):not(#\#):not(#\#):not(#\#):not(#\#) {
+  color: fg.disabled;
+  cursor: not-allowed;
+}
+
+.satoshi-kit--button--variant_ghost:is(:focus-visible, [data-focus-visible]):not(#\#):not(#\#):not(#\#):not(#\#) {
+  outline: 2px solid;
+  outline-offset: 2px;
+  outline-color: var(--satoshi-kit--colors-color-palette-default);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .satoshi-kit--button--variant_solid:is(:hover, [data-hover]):not(#\#):not(#\#):not(#\#):not(#\#) {
+    background: var(--satoshi-kit--colors-bg-hover);
+}
+
+  .satoshi-kit--button--variant_solid:is(:hover, [data-hover]):is(:disabled, [disabled], [data-disabled]):not(#\#):not(#\#):not(#\#):not(#\#) {
+    color: fg.disabled;
+    background: bg.disabled;
+}
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .satoshi-kit--button--variant_link:is(:hover, [data-hover]):not(#\#):not(#\#):not(#\#):not(#\#) {
+    color: fg.hover;
+}
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .satoshi-kit--button--variant_ghost:is(:hover, [data-hover]):not(#\#):not(#\#):not(#\#):not(#\#) {
+    background: var(--satoshi-kit--colors-bg-subtle);
+}
+
+  .satoshi-kit--button--variant_ghost:is(:hover, [data-hover]):is(:disabled, [disabled], [data-disabled]):not(#\#):not(#\#):not(#\#):not(#\#) {
+    background: var(--satoshi-kit--colors-transparent);
+    color: fg.disabled;
+}
+}
+
+.satoshi-kit--dialog__backdrop:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  z-index: var(--satoshi-kit--z-index-overlay);
+  left: var(--satoshi-kit--spacing-0);
+  top: var(--satoshi-kit--spacing-0);
+}
+
+:root:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) .satoshi-kit--dialog__backdrop,.light:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) .satoshi-kit--dialog__backdrop {
+  background: var(--satoshi-kit--colors-neutral-a100);
+}
+
+.dark:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) .satoshi-kit--dialog__backdrop {
+  background: var(--satoshi-kit--colors-neutral-a800);
+}
+
+.satoshi-kit--dialog__backdrop:is([open], [data-open], [data-state="open"]):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  animation: var(--satoshi-kit--animations-backdrop-in);
+}
+
+.satoshi-kit--dialog__backdrop:is([closed], [data-closed], [data-state="closed"]):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  animation: var(--satoshi-kit--animations-backdrop-out);
+}
+
+.satoshi-kit--dialog__positioner:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  display: flex;
+  overflow: auto;
+  position: fixed;
+  width: 100vw;
+  height: 100dvh;
+  z-index: var(--satoshi-kit--z-index-modal);
+  align-items: center;
+  justify-content: center;
+  left: var(--satoshi-kit--spacing-0);
+  top: var(--satoshi-kit--spacing-0);
+}
+
+.satoshi-kit--dialog__content:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  background: var(--satoshi-kit--colors-bg-canvas);
+  border-radius: var(--satoshi-kit--radii-2xl);
+  box-shadow: var(--satoshi-kit--shadows-lg);
+  min-width: var(--satoshi-kit--sizes-sm);
+  position: relative;
+}
+
+.satoshi-kit--dialog__content:is([open], [data-open], [data-state="open"]):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  animation: var(--satoshi-kit--animations-dialog-in);
+}
+
+.satoshi-kit--dialog__content:is([closed], [data-closed], [data-state="closed"]):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  animation: var(--satoshi-kit--animations-dialog-out);
+}
+
+.satoshi-kit--dialog__title:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  font-size: var(--satoshi-kit--font-sizes-md);
+  font-family: var(--satoshi-kit--fonts-body);
+  font-weight: var(--satoshi-kit--font-weights-semibold);
+  line-height: var(--satoshi-kit--line-heights-normal);
+}
+
+.satoshi-kit--dialog__description:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  color: fg.muted;
+  line-height: 1.25rem;
+  font-size: var(--satoshi-kit--font-sizes-sm);
+  font-family: var(--satoshi-kit--fonts-body);
+  font-weight: var(--satoshi-kit--font-weights-normal);
+}
+
+.satoshi-kit--textStyle_md:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  font-family: var(--satoshi-kit--fonts-body);
+  font-size: var(--satoshi-kit--font-sizes-sm);
+  font-weight: var(--satoshi-kit--font-weights-medium);
+  line-height: var(--satoshi-kit--line-heights-normal);
+}
+
+.satoshi-kit--textStyle_xs:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  line-height: 1rem;
+  font-size: var(--satoshi-kit--font-sizes-xs);
+  font-family: var(--satoshi-kit--fonts-body);
+  font-weight: var(--satoshi-kit--font-weights-normal);
+}
+
+.satoshi-kit--textStyle_subtitle:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  font-size: var(--satoshi-kit--font-sizes-xl);
+  font-family: var(--satoshi-kit--fonts-body);
+  font-weight: var(--satoshi-kit--font-weights-medium);
+}
+
+.satoshi-kit--textStyle_lg:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  font-size: var(--satoshi-kit--font-sizes-md);
+  font-family: var(--satoshi-kit--fonts-body);
+  font-weight: var(--satoshi-kit--font-weights-semibold);
+  line-height: var(--satoshi-kit--line-heights-normal);
+}
+
+.satoshi-kit--op_0:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  opacity: 0;
+}
+
+.satoshi-kit--d_inline-flex:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  display: inline-flex;
+}
+
+.satoshi-kit--pos_absolute:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  position: absolute;
+}
+
+.satoshi-kit--trf_translate\(-50\%\,_-50\%\):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  transform: translate(-50%, -50%);
+}
+
+.satoshi-kit--inset-s_50\%:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  inset-inline-start: 50%;
+}
+
+.satoshi-kit--w_1\.1em:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  width: 1.1em;
+}
+
+.satoshi-kit--h_1\.1em:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  height: 1.1em;
+}
+
+.satoshi-kit--w_8:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  width: var(--satoshi-kit--sizes-8);
+}
+
+.satoshi-kit--h_8:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  height: var(--satoshi-kit--sizes-8);
+}
+
+.satoshi-kit--sr_true:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.satoshi-kit--px_0:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  padding-inline: var(--satoshi-kit--spacing-0);
+}
+
+.satoshi-kit--bdr_md:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  border-radius: var(--satoshi-kit--radii-md);
+}
+
+.satoshi-kit--d_flex:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  display: flex;
+}
+
+.satoshi-kit--gap_10px:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  gap: 10px;
+}
+
+.satoshi-kit--bg_bg\.emphasized:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  background: var(--satoshi-kit--colors-bg-emphasized);
+}
+
+.satoshi-kit--p_6:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  padding: var(--satoshi-kit--spacing-6);
+}
+
+.satoshi-kit--px_4:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  padding-inline: var(--satoshi-kit--spacing-4);
+}
+
+.satoshi-kit--gap_1:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  gap: var(--satoshi-kit--spacing-1);
+}
+
+.satoshi-kit--gap_2:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  gap: var(--satoshi-kit--spacing-2);
+}
+
+.satoshi-kit--c_text\.onEmphasized\.default:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  color: var(--satoshi-kit--colors-text-on-emphasized-default);
+}
+
+.satoshi-kit--p_4:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  padding: var(--satoshi-kit--spacing-4);
+}
+
+.satoshi-kit--ta_center:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  text-align: center;
+}
+
+.satoshi-kit--c_text\.onEmphasized\.muted:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  color: var(--satoshi-kit--colors-text-on-emphasized-muted);
+}
+
+.satoshi-kit--w_32:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  width: var(--satoshi-kit--sizes-32);
+}
+
+.satoshi-kit--h_32:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  height: var(--satoshi-kit--sizes-32);
+}
+
+.satoshi-kit--w_auto:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  width: auto;
+}
+
+.satoshi-kit--td_none:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  text-decoration: none;
+}
+
+.satoshi-kit--gap_8:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  gap: var(--satoshi-kit--spacing-8);
+}
+
+.satoshi-kit--gap_6:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  gap: var(--satoshi-kit--spacing-6);
+}
+
+.satoshi-kit--w_full:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  width: var(--satoshi-kit--sizes-full);
+}
+
+.satoshi-kit--gap_4:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  gap: var(--satoshi-kit--spacing-4);
+}
+
+.satoshi-kit--flex_1:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  flex: 1 1;
+}
+
+.satoshi-kit--c_fg\.subtle:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  color: fg.subtle;
+}
+
+.satoshi-kit--max-w_600px:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  max-width: 600px;
+}
+
+.satoshi-kit--ov_hidden:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  overflow: hidden;
+}
+
+.satoshi-kit--d_grid:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  display: grid;
+}
+
+.satoshi-kit--gap_0:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  gap: var(--satoshi-kit--spacing-0);
+}
+
+.satoshi-kit--h_100vh:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  height: 100vh;
+}
+
+.satoshi-kit--max-h_460px:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  max-height: 460px;
+}
+
+.satoshi-kit--h_full:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  height: var(--satoshi-kit--sizes-full);
+}
+
+.satoshi-kit--px_12:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  padding-inline: var(--satoshi-kit--spacing-12);
+}
+
+.satoshi-kit--cq-t_inline-size:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  container-type: inline-size;
+}
+
+.satoshi-kit--w_10:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  width: var(--satoshi-kit--sizes-10);
+}
+
+.satoshi-kit--h_10:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  height: var(--satoshi-kit--sizes-10);
+}
+
+.satoshi-kit--w_4em:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  width: 4em;
+}
+
+.satoshi-kit--h_4em:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  height: 4em;
+}
+
+.satoshi-kit--px_3:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  padding-inline: var(--satoshi-kit--spacing-3);
+}
+
+.satoshi-kit--w_6:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  width: var(--satoshi-kit--sizes-6);
+}
+
+.satoshi-kit--h_6:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  height: var(--satoshi-kit--sizes-6);
+}
+
+.satoshi-kit--c_text\.muted:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  color: var(--satoshi-kit--colors-text-muted);
+}
+
+.satoshi-kit--tt_capitalize:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  text-transform: capitalize;
+}
+
+.satoshi-kit--bdr_0:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  border-radius: 0;
+}
+
+.satoshi-kit--py_8:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  padding-block: var(--satoshi-kit--spacing-8);
+}
+
+.satoshi-kit--h_1em:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  height: 1em;
+}
+
+.satoshi-kit--w_1em:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  width: 1em;
+}
+
+.satoshi-kit--ai_center:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  align-items: center;
+}
+
+.satoshi-kit--jc_center:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  justify-content: center;
+}
+
+.satoshi-kit--top_50\%:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  top: 50%;
+}
+
+.satoshi-kit--flex-d_column:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  flex-direction: column;
+}
+
+.satoshi-kit--pt_6:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  padding-top: var(--satoshi-kit--spacing-6);
+}
+
+.satoshi-kit--fw_bold:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  font-weight: var(--satoshi-kit--font-weights-bold);
+}
+
+.satoshi-kit--flex-d_row:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  flex-direction: row;
+}
+
+.satoshi-kit--fs_xs:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  font-size: var(--satoshi-kit--font-sizes-xs);
+}
+
+.satoshi-kit--mt_-0\.25em:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  margin-top: -0.25em;
+}
+
+.satoshi-kit--top_2:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  top: var(--satoshi-kit--spacing-2);
+}
+
+.satoshi-kit--right_2:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  right: var(--satoshi-kit--spacing-2);
+}
+
+.satoshi-kit--grid-tc_1fr_1fr:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  grid-template-columns: 1fr 1fr;
+}
+
+.satoshi-kit--pt_14:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  padding-top: var(--satoshi-kit--spacing-14);
+}
+
+.satoshi-kit--jc_space-between:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  justify-content: space-between;
+}
+
+.satoshi-kit--flex-sh_0:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  flex-shrink: 0;
+}
+
+.satoshi-kit--flex-g_1:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  flex-grow: 1;
+}
+
+.satoshi-kit--ov-y_auto:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  overflow-y: auto;
+}
+
+.satoshi-kit--as_start:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  align-self: start;
+}
+
+.satoshi-kit--jc_flex-start:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  justify-content: flex-start;
+}
+
+.satoshi-kit--ai_start:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  align-items: start;
+}
+
+.satoshi-kit--ml_auto:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) {
+  margin-left: auto;
+}
