@@ -57,7 +57,7 @@ export default function LendPage() {
 			<div className="w-full mx-auto px-4 py-6">
 				<div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full">
 					{/* LEND Section - Takes full width on mobile, 4/6 on desktop */}
-					<div className="w-full lg:flex-[4]">
+					<div className="w-full lg:flex-[4] card-animate">
 						{depositSuccess ? (
 							// Success Card
 							<div className="w-full bg-white border-bc-black rounded-lg p-6 shadow-lg">
@@ -216,7 +216,7 @@ export default function LendPage() {
 					</div>
 
 					{/* TRANSACTION Section - Takes full width on mobile, 2/6 on desktop */}
-					<div className="w-full lg:flex-[2]">
+					<div className="w-full lg:flex-[2] card-animate card-animate-delay-1">
 						<div className="w-full rounded-lg shadow-lg">
 							{/* Header */}
 							<div className="bg-bc-yellow border-bc-black rounded-lg px-10 py-2 mb-4 lg:mb-6 shadow-md">

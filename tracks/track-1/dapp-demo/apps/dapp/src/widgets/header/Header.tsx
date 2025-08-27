@@ -21,13 +21,16 @@ export const Header = () => {
 
 				<div className="flex items-center gap-6">
 					<Link href="/lend" className="text-sm font-medium hover:scale-105 transition-colors">
-						Lend
+						LEND
 					</Link>
 					<Link href="/borrow" className="text-sm font-medium hover:scale-105 transition-colors">
-						Borrow
+						BORROW
 					</Link>
 					<Link href="/transactions" className="text-sm font-medium hover:scale-105 transition-colors">
-						My Transactions
+						MY TRANSACTIONS
+					</Link>
+					<Link href="/transactions" className="text-sm font-medium hover:scale-105 transition-colors">
+						ABOUT
 					</Link>
 				</div>
 

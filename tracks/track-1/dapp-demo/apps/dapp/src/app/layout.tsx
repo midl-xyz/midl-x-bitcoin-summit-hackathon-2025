@@ -31,7 +31,7 @@ export default function RootLayout({
 					<FallingCoins />
 
 					<Header />
-					<div className="mx-auto max-w-5xl px-4 py-6">{children}</div>
+					<div className="mx-auto max-w-6xl px-4 py-6">{children}</div>
 					<Toaster />
 				</body>
 			</Web3Provider>

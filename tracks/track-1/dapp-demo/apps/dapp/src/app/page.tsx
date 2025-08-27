@@ -23,11 +23,11 @@ export default function Home() {
 
 	return (
 		<div className="grid grid-cols-1 gap-6 md:grid-cols-[400px_1fr]">
-			<div>
+			<div className="card-animate">
 				<VaultInfo />
 			</div>
 
-			<Card>
+			<Card className="card-animate card-animate-delay-1">
 				<CardHeader>
 					<CardTitle className="text-base">Interact with the Vault</CardTitle>
 

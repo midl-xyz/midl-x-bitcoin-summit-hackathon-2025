@@ -8,7 +8,7 @@ export default function TransactionsPage() {
 		<>
 			<div className="w-full mx-auto px-4 py-6">
 				{/* Header */}
-				<div className="bg-bc-yellow border-bc-black rounded-lg px-6 py-4 mb-8 text-center">
+				<div className="bg-bc-yellow border-bc-black rounded-lg px-6 py-4 mb-8 text-center card-animate">
 					<h1 className="text-2xl font-bold text-bc-black uppercase">MY TRANSACTIONS</h1>
 				</div>
 
@@ -16,7 +16,7 @@ export default function TransactionsPage() {
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 					{/* Generate 6 identical transaction cards */}
 					{Array.from({ length: 6 }).map((_, index) => (
-						<div key={index} className="bg-white border-bc-black rounded-lg p-6 shadow-md">
+						<div key={index} className={`bg-white border-bc-black rounded-lg p-6 shadow-md card-animate card-animate-delay-${Math.min(index + 1, 6)}`}>
 							{/* Top Section - Asset */}
 							<div className="flex items-center gap-3 mb-6">
 								<div className="bg-bc-orange rounded-full p-3">
