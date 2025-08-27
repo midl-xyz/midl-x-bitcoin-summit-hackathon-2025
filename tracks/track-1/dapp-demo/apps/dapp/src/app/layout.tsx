@@ -13,9 +13,10 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-	title: "MIDL DApp Demo",
+	title: "BitCredit - Bitcoin Lending Platform",
 	description:
-		"A demo application for building decentralized applications with MIDL.",
+		"Revolutionary Bitcoin lending platform built for the MIDL Bitcoin Summit Hackathon, featuring optimized backend selectors for lightning-fast performance.",
+	viewport: "width=device-width, initial-scale=1, maximum-scale=1",
 };
 
 export default function RootLayout({
@@ -24,14 +25,21 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" className="h-full">
+			<head>
+				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+			</head>
 			<Web3Provider>
-				<body className={`${lexend.variable} font-sans bg-bc-grid`}>
+				<body className={`${lexend.variable} h-screen font-sans bg-bc-grid antialiased flex flex-col`}>
 					{/* Dynamic Falling Coins Background */}
 					<FallingCoins />
 
 					<Header />
-					<div className="mx-auto max-w-6xl px-4 py-6">{children}</div>
+					<main className="flex-1 overflow-auto">
+						<div className="mx-auto max-w-full xl:max-w-10xl px-4 sm:px-6 lg:px-8 py-6 min-h-full">
+							{children}
+						</div>
+					</main>
 					<Toaster />
 				</body>
 			</Web3Provider>
