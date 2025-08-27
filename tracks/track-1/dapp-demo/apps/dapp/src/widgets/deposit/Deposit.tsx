@@ -31,7 +31,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 interface DepositProps {
-	onSuccess?: () => void;
+	onSuccess?: (data: { amount: number; runeSymbol: string; runeName: string }) => void;
 }
 
 export const Deposit = ({ onSuccess }: DepositProps) => {
@@ -40,11 +40,16 @@ export const Deposit = ({ onSuccess }: DepositProps) => {
 	const { deposit, isPending } = useDeposit({
 		mutation: {
 			onSuccess: () => {
+				const amount = form.getValues("amount");
 				form.reset();
 				toast.success("Deposit successful!");
 				client.invalidateQueries();
 				// Call the onSuccess callback if provided
-				onSuccess?.();
+				onSuccess?.({
+					amount: amount || 0,
+					runeSymbol: runeMetadata?.symbol || "RUNES",
+					runeName: runeMetadata?.spaced_name || "Unknown Rune"
+				});
 			},
 			onError: (error, variables) => {
 				console.error("Deposit failed:", error, variables);

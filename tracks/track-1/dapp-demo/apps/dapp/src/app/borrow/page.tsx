@@ -9,18 +9,18 @@ import { RuneSelect } from "@/widgets/rune-select/RuneSelect";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-interface DepositSuccessData {
+interface BorrowSuccessData {
 	amount: number;
 	runeSymbol: string;
 	runeName: string;
 }
 
-export default function LendPage() {
+export default function BorrowPage() {
 	const router = useRouter();
 	const [collateralStates, setCollateralStates] = useState<boolean[]>(Array(5).fill(false));
 	const [transactionCollateralStates, setTransactionCollateralStates] = useState<boolean[]>(Array(5).fill(false));
 	const [showBorrowInterface, setShowBorrowInterface] = useState(false);
-	const [depositSuccess, setDepositSuccess] = useState<DepositSuccessData | null>(null);
+	const [borrowSuccess, setBorrowSuccess] = useState<BorrowSuccessData | null>(null);
 
 	const handleCollateralChange = (index: number, checked: boolean) => {
 		setCollateralStates(prev => {
@@ -38,17 +38,17 @@ export default function LendPage() {
 		});
 	};
 
-	const handleLendClick = () => {
+	const handleBorrowClick = () => {
 		setShowBorrowInterface(true);
-		setDepositSuccess(null); // Reset success state when starting new lend
+		setBorrowSuccess(null); // Reset success state when starting new borrow
 	};
 
-	const handleDepositSuccess = (data: DepositSuccessData) => {
-		setDepositSuccess(data);
+	const handleBorrowSuccess = (data: BorrowSuccessData) => {
+		setBorrowSuccess(data);
 	};
 
-	const handleBackToLend = () => {
-		setDepositSuccess(null);
+	const handleBackToBorrow = () => {
+		setBorrowSuccess(null);
 		setShowBorrowInterface(false);
 	};
 
@@ -56,16 +56,16 @@ export default function LendPage() {
 		<>
 			<div className="w-full mx-auto px-4 py-6">
 				<div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full">
-					{/* LEND Section - Takes full width on mobile, 4/6 on desktop */}
+					{/* BORROW Section - Takes full width on mobile, 4/6 on desktop */}
 					<div className="w-full lg:flex-[4]">
-						{depositSuccess ? (
+						{borrowSuccess ? (
 							// Success Card
 							<div className="w-full bg-white border-bc-black rounded-lg p-6 shadow-lg">
 								<div className="text-center">
 									<div className="bg-green-100 border-green-500 rounded-full p-4 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
 										<CheckCircle className="h-12 w-12 text-green-600" />
 									</div>
-									<h1 className="text-3xl font-bold text-bc-black mb-4">Deposit Successful!</h1>
+									<h1 className="text-3xl font-bold text-bc-black mb-4">Borrow Successful!</h1>
 									
 									<div className="bg-bc-yellow border-bc-black rounded-lg p-6 mb-6">
 										<div className="flex items-center gap-6">
@@ -73,12 +73,12 @@ export default function LendPage() {
 												<Bitcoin className="h-12 w-12 text-white" />
 											</div>
 											<div className="text-left">
-												<div className="text-sm font-medium text-bc-black">DEPOSITED</div>
+												<div className="text-sm font-medium text-bc-black">BORROWED</div>
 												<div className="text-3xl font-bold text-bc-black">
-													{depositSuccess.amount} {depositSuccess.runeSymbol}
+													{borrowSuccess.amount} {borrowSuccess.runeSymbol}
 												</div>
 												<div className="text-sm font-medium text-bc-black">
-													{depositSuccess.runeName}
+													{borrowSuccess.runeName}
 												</div>
 											</div>
 										</div>
@@ -86,10 +86,10 @@ export default function LendPage() {
 
 									<div className="space-y-4">
 										<button 
-											onClick={handleBackToLend}
+											onClick={handleBackToBorrow}
 											className="w-full bg-bc-black text-white py-4 rounded-lg font-bold text-lg border-2 border-white hover:bg-bc-black/90 transition-colors"
 										>
-											LEND MORE
+											BORROW MORE
 										</button>
 										<button 
 											onClick={() => router.push('/transactions')}
@@ -101,11 +101,11 @@ export default function LendPage() {
 								</div>
 							</div>
 						) : !showBorrowInterface ? (
-							// Original LEND interface
+							// Original BORROW interface
 							<div className="w-full bg-bc-muted border-bc-black rounded-lg p-4 lg:p-6 shadow-lg">
 								{/* Header */}
 								<div className="bg-bc-yellow border-bc-black rounded-lg px-4 py-2 mb-4 lg:mb-6 shadow-md">
-									<h2 className="text-bc-black font-bold text-lg">LENDING VAULTS</h2>
+									<h2 className="text-bc-black font-bold text-lg">BORROW VAULTS</h2>
 								</div>
 								
 								{/* Column Headers */}
@@ -114,7 +114,7 @@ export default function LendPage() {
 										Asset
 									</div>
 									<div className="flex items-center gap-2 flex-1">
-										Lend Rate
+										Borrow Rate
 										<ArrowUpDown className="h-4 w-4" />
 									</div>
 									<div className="flex items-center gap-2 flex-1">
@@ -141,9 +141,9 @@ export default function LendPage() {
 													</div>
 													<span className="font-medium">SBTC</span>
 												</div>
-												<div className="flex-1 text-left text-bc-black">3.17%</div>
+												<div className="flex-1 text-left text-bc-black">5.25%</div>
 												<div className="flex-1 text-left text-bc-black">
-													<div>10.3k available</div>
+													<div>50.2k available</div>
 													<div className="text-sm text-gray-600">0 borrowed</div>
 												</div>
 												<div className="flex-1 flex justify-start">
@@ -155,10 +155,10 @@ export default function LendPage() {
 												</div>
 												<div className="flex-1 flex justify-start">
 													<button 
-														onClick={handleLendClick}
+														onClick={handleBorrowClick}
 														className="bg-bc-yellow text-bc-black px-4 py-2 rounded-lg font-medium shadow-sm"
 													>
-														LEND
+														BORROW
 													</button>
 												</div>
 											</div>
@@ -167,10 +167,10 @@ export default function LendPage() {
 								</div>
 							</div>
 						) : (
-							// New LEND BTC interface
+							// New BORROW BTC interface
 							<div className="w-full bg-white border-bc-black rounded-lg p-6 shadow-lg">
 								{/* Header */}
-								<h1 className="text-3xl font-bold text-bc-black mb-6">LEND</h1>
+								<h1 className="text-3xl font-bold text-bc-black mb-6">BORROW</h1>
 								
 								{/* Interest Rate Display */}
 								<div className="bg-bc-yellow border-bc-black rounded-lg p-6 mb-6">
@@ -188,29 +188,14 @@ export default function LendPage() {
 									</div>
 								</div>
 								
-								{/* Lend Amount Input */}
+								{/* BORROW Amount Input */}
 								<div className="mb-6">
 									<RuneSelect />
-									<Deposit onSuccess={handleDepositSuccess} />
+									<Withdraw onSuccess={handleBorrowSuccess} />
 								</div>
 								
-								{/* Profit Display Cards */}
-								{/* <div className="grid grid-cols-3 gap-4 mb-6">
-									<div className="bg-white border-bc-black rounded-lg p-4 text-center">
-										<div className="text-sm font-medium text-bc-black">Weekly Profit</div>
-										<div className="text-xl font-bold text-bc-orange">$10.00</div>
-									</div>
-									<div className="bg-white border-bc-black rounded-lg p-4 text-center">
-										<div className="text-sm font-medium text-bc-black">Weekly Profit</div>
-										<div className="text-xl font-bold text-bc-orange">$100.00</div>
-									</div>
-									<div className="bg-white border-bc-black rounded-lg p-4 text-center">
-										<div className="text-sm font-medium text-bc-black">Yearly Profit</div>
-										<div className="text-xl font-bold text-bc-orange">$1000.00</div>
-									</div>
-								</div>
-								 */}
-								{/* Action Button - Removed since Deposit component handles submission */}
+								
+								{/* Action Button - Removed since Withdraw component handles submission */}
 							</div>
 						)}
 					</div>

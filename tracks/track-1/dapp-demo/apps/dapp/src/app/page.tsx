@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
 	Card,
@@ -9,8 +11,16 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Deposit, VaultInfo, Withdraw } from "@/widgets";
 import { RuneSelect } from "@/widgets/rune-select/RuneSelect";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+	const router = useRouter();
+
+	const handleDepositSuccess = (data: { amount: number; runeSymbol: string; runeName: string }) => {
+		// Navigate to lend page after successful deposit
+		router.push('/lend');
+	};
+
 	return (
 		<div className="grid grid-cols-1 gap-6 md:grid-cols-[400px_1fr]">
 			<div>
@@ -65,7 +75,7 @@ export default function Home() {
 						<TabsContent value="deposit" className="space-y-3">
 							<RuneSelect />
 
-							<Deposit />
+							<Deposit onSuccess={handleDepositSuccess} />
 						</TabsContent>
 						<TabsContent value="withdraw" className="space-y-3">
 							<RuneSelect />

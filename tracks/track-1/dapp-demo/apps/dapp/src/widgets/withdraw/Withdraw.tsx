@@ -30,19 +30,30 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export const Withdraw = () => {
+interface WithdrawProps {
+	onSuccess?: (data: { amount: number; runeSymbol: string; runeName: string }) => void;
+}
+
+export const Withdraw = ({ onSuccess }: WithdrawProps) => {
 	const client = useQueryClient();
 
 	const { withdraw, isPending } = useWithdraw({
 		mutation: {
 			onSuccess: () => {
+				const amount = form.getValues("amount");
 				form.reset();
-				toast.success("Withdrawal successful!");
+				toast.success("Borrow successful!");
 				client.invalidateQueries();
+				// Call the onSuccess callback if provided
+				onSuccess?.({
+					amount: amount || 0,
+					runeSymbol: runeMetadata?.symbol || "RUNES",
+					runeName: runeMetadata?.spaced_name || "Unknown Rune"
+				});
 			},
 			onError: (error, variables) => {
-				console.error("Withdrawal failed:", error, variables);
-				toast.error("Withdrawal failed. See console for details.");
+				console.error("Borrow failed:", error, variables);
+				toast.error("Borrow failed. See console for details.");
 			},
 		},
 	});
@@ -79,25 +90,40 @@ export const Withdraw = () => {
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
+			<form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
 				<FormField
 					control={form.control}
 					name="amount"
 					render={() => {
 						return (
 							<FormItem>
-								<FormLabel>Withdrawal Amount</FormLabel>
+								<FormLabel className="block text-sm font-medium text-bc-black mb-2">
+									Borrow Amount
+								</FormLabel>
 								<FormControl>
-									<Input
-										step="any"
-										type="number"
-										placeholder="Enter amount to withdraw"
-										{...form.register("amount")}
-									/>
+									<div className="flex gap-2">
+										<Input
+											type="number"
+											step="any"
+											placeholder="Enter Amount"
+											className="flex-1 px-4 py-3 border-bc-black rounded-lg bg-white text-bc-black placeholder:text-gray-500 focus:ring-2 focus:ring-bc-yellow focus:border-bc-yellow"
+											{...form.register("amount")}
+										/>
+										<Button 
+											type="button"
+											className="bg-bc-yellow text-bc-black px-4 py-3 rounded-lg font-medium border-bc-black hover:bg-bc-yellow/90 transition-colors"
+											onClick={() => {
+												// TODO: Implement MAX functionality
+												toast.info("MAX functionality coming soon!");
+											}}
+										>
+											MAX
+										</Button>
+									</div>
 								</FormControl>
 
-								<FormDescription>
-									Enter the amount of Bitcoin Runes you want to withdraw.
+								<FormDescription className="text-sm text-gray-600 mt-2">
+									Enter the amount of Bitcoin Runes you want to borrow.
 								</FormDescription>
 							</FormItem>
 						);
@@ -106,12 +132,12 @@ export const Withdraw = () => {
 
 				<Button
 					type="submit"
-					className="w-full"
+					className="w-full bg-bc-black text-white py-4 rounded-lg font-bold text-lg border-2 border-white hover:bg-bc-black/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
 					disabled={
 						!form.formState.isValid || erc20Address === zeroAddress || isPending
 					}
 				>
-					{isPending ? "Withdrawing..." : "Withdraw"}
+					{isPending ? "Borrowing..." : `BORROW ${form.watch("amount") || "0"} ${runeMetadata?.symbol || "RUNES"}`}
 				</Button>
 			</form>
 		</Form>
