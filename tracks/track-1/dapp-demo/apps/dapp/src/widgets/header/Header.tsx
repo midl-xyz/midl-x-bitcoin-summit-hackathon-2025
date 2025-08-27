@@ -14,9 +14,9 @@ export const Header = () => {
 		<div className="sticky top-4 z-10 mx-4">
 			<div className="mx-auto max-w-5xl px-6 py-2 flex items-center justify-between gap-3 bg-bc-yellow border-solid border-bc-black rounded-full shadow-sm">
 				<div className="flex items-center gap-2">
-					<div>
+					<Link href="/lend">
 						<Image src="/bitcreditlogo.svg" alt="BitCredit Logo" width={120} height={26} />
-					</div>
+					</Link>
 				</div>
 
 				<div className="flex items-center gap-6">

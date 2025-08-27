@@ -1,12 +1,16 @@
 "use client";
 
-import { Header } from "@/widgets";
 import { Badge } from "@/components/ui/badge";
 import { Toggle } from "@/components/ui/toggle";
 import { ArrowUpDown, Bitcoin } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Header, Deposit, VaultInfo, Withdraw } from "@/widgets";
+import { RuneSelect } from "@/widgets/rune-select/RuneSelect";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LendPage() {
+	const router = useRouter();
 	const [collateralStates, setCollateralStates] = useState<boolean[]>(Array(5).fill(false));
 	const [transactionCollateralStates, setTransactionCollateralStates] = useState<boolean[]>(Array(5).fill(false));
 	const [showBorrowInterface, setShowBorrowInterface] = useState(false);
@@ -31,6 +35,11 @@ export default function LendPage() {
 		setShowBorrowInterface(true);
 	};
 
+	const handleDepositSuccess = () => {
+		// Navigate to transactions page after successful deposit
+		router.push('/transactions');
+	};
+
 	return (
 		<>
 			<div className="w-full mx-auto px-4 py-6">
@@ -42,7 +51,7 @@ export default function LendPage() {
 							<div className="w-full bg-bc-muted border-bc-black rounded-lg p-4 lg:p-6 shadow-lg">
 								{/* Header */}
 								<div className="bg-bc-yellow border-bc-black rounded-lg px-4 py-2 mb-4 lg:mb-6 shadow-md">
-									<h2 className="text-bc-black font-bold text-lg">LEND</h2>
+									<h2 className="text-bc-black font-bold text-lg">LENDING VAULTS</h2>
 								</div>
 								
 								{/* Column Headers */}
@@ -118,23 +127,17 @@ export default function LendPage() {
 										<div>
 											<div className="text-sm font-medium text-bc-black">INTEREST APR</div>
 											<div className="text-3xl font-bold text-bc-black">19%</div>
+											<div className="text-sm font-medium text-bc-black">
+
+											</div>
 										</div>
 									</div>
 								</div>
 								
 								{/* Lend Amount Input */}
 								<div className="mb-6">
-									<label className="block text-sm font-medium text-bc-black mb-2">Lend Amount</label>
-									<div className="flex gap-2">
-										<input 
-											type="text" 
-											placeholder="Enter Amount" 
-											className="flex-1 px-4 py-3 border-bc-black rounded-lg bg-white"
-										/>
-										<button className="bg-bc-yellow text-bc-black px-4 py-3 rounded-lg font-medium border-bc-black">
-											MAX
-										</button>
-									</div>
+									<RuneSelect />
+									<Deposit onSuccess={handleDepositSuccess} />
 								</div>
 								
 								{/* Profit Display Cards */}
@@ -153,10 +156,7 @@ export default function LendPage() {
 									</div>
 								</div>
 								
-								{/* Action Button */}
-								<button className="w-full bg-bc-black text-white py-4 rounded-lg font-bold text-lg border-2 border-white">
-									LEND 0.001 BTC
-								</button>
+								{/* Action Button - Removed since Deposit component handles submission */}
 							</div>
 						)}
 					</div>

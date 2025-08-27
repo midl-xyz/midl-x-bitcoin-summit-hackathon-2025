@@ -30,7 +30,11 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export const Deposit = () => {
+interface DepositProps {
+	onSuccess?: () => void;
+}
+
+export const Deposit = ({ onSuccess }: DepositProps) => {
 	const client = useQueryClient();
 
 	const { deposit, isPending } = useDeposit({
@@ -39,6 +43,8 @@ export const Deposit = () => {
 				form.reset();
 				toast.success("Deposit successful!");
 				client.invalidateQueries();
+				// Call the onSuccess callback if provided
+				onSuccess?.();
 			},
 			onError: (error, variables) => {
 				console.error("Deposit failed:", error, variables);
@@ -79,25 +85,40 @@ export const Deposit = () => {
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
+			<form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
 				<FormField
 					control={form.control}
 					name="amount"
 					render={() => {
 						return (
 							<FormItem>
-								<FormLabel>Deposit Amount</FormLabel>
+								<FormLabel className="block text-sm font-medium text-bc-black mb-2">
+									Lend Amount
+								</FormLabel>
 								<FormControl>
-									<Input
-										type="number"
-										step="any"
-										placeholder="Enter amount to deposit"
-										{...form.register("amount")}
-									/>
+									<div className="flex gap-2">
+										<Input
+											type="number"
+											step="any"
+											placeholder="Enter Amount"
+											className="flex-1 px-4 py-3 border-bc-black rounded-lg bg-white text-bc-black placeholder:text-gray-500 focus:ring-2 focus:ring-bc-yellow focus:border-bc-yellow"
+											{...form.register("amount")}
+										/>
+										<Button 
+											type="button"
+											className="bg-bc-yellow text-bc-black px-4 py-3 rounded-lg font-medium border-bc-black hover:bg-bc-yellow/90 transition-colors"
+											onClick={() => {
+												// TODO: Implement MAX functionality
+												toast.info("MAX functionality coming soon!");
+											}}
+										>
+											MAX
+										</Button>
+									</div>
 								</FormControl>
 
-								<FormDescription>
-									Enter the amount of Bitcoin Runes you want to deposit.
+								<FormDescription className="text-sm text-gray-600 mt-2">
+									Enter the amount of Bitcoin Runes you want to lend.
 								</FormDescription>
 							</FormItem>
 						);
@@ -106,12 +127,12 @@ export const Deposit = () => {
 
 				<Button
 					type="submit"
-					className="w-full"
+					className="w-full bg-bc-black text-white py-4 rounded-lg font-bold text-lg border-2 border-white hover:bg-bc-black/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
 					disabled={
 						!form.formState.isValid || erc20Address === zeroAddress || isPending
 					}
 				>
-					{isPending ? "Depositing..." : "Deposit"}
+					{isPending ? "Lending..." : `LEND ${form.watch("amount") || "0"} ${runeMetadata?.symbol || "RUNES"}`}
 				</Button>
 			</form>
 		</Form>
