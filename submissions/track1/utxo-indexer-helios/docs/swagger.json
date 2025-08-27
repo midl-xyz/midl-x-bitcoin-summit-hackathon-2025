@@ -1,0 +1,567 @@
+{
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "Bitcoin UTXO management service with 6 advanced selection algorithms and Multi-Address support\n\nThis API provides efficient UTXO indexing and selection for Bitcoin wallets,\nsupporting both single and multiple address management with various selection strategies.\n\nFeatures:\n- 6 Advanced UTXO selection algorithms (Knapsack DP, Branch \u0026 Bound, GA, etc.)\n- Multi-Address support for HD wallets\n- Real-time UTXO management\n- Fee optimization strategies",
+        "title": "UTXO Indexer-Selector API",
+        "contact": {
+            "name": "API Support",
+            "url": "https://github.com/helios/utxo-indexer"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {
+        "/": {
+            "get": {
+                "description": "Get service information and available endpoints",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Info"
+                ],
+                "summary": "Service information",
+                "responses": {
+                    "200": {
+                        "description": "Service info with endpoints and usage examples",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/balance/{address}": {
+            "get": {
+                "description": "Get the total balance for a specific Bitcoin address",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Balance"
+                ],
+                "summary": "Get balance for address",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bitcoin address",
+                        "name": "address",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Balance information",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/multi-select": {
+            "post": {
+                "description": "Select optimal UTXOs from multiple Bitcoin addresses for a transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Multi-Address"
+                ],
+                "summary": "Multi-Address UTXO Selection",
+                "parameters": [
+                    {
+                        "description": "Multi-address selection parameters",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.MultiSelectRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Selected UTXOs from multiple addresses",
+                        "schema": {
+                            "$ref": "#/definitions/models.SelectUTXOResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request or insufficient funds",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/multi-summary": {
+            "post": {
+                "description": "Get balance and UTXO summary for multiple Bitcoin addresses",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Multi-Address"
+                ],
+                "summary": "Multi-Address Balance Summary",
+                "parameters": [
+                    {
+                        "description": "List of addresses",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Balance summary for all addresses",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/refresh": {
+            "post": {
+                "description": "Refresh UTXO data for a specific address from live API",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "UTXOs"
+                ],
+                "summary": "Refresh UTXOs",
+                "parameters": [
+                    {
+                        "description": "Address to refresh",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Refresh successful",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/select": {
+            "post": {
+                "description": "Select optimal UTXOs for a transaction based on amount and strategy",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Selection"
+                ],
+                "summary": "Select UTXOs for transaction",
+                "parameters": [
+                    {
+                        "description": "Selection parameters",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.SelectUTXORequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Selected UTXOs",
+                        "schema": {
+                            "$ref": "#/definitions/models.SelectUTXOResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/spend": {
+            "post": {
+                "description": "Mark UTXOs as spent (demo only)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Demo"
+                ],
+                "summary": "Simulate spending",
+                "parameters": [
+                    {
+                        "description": "Spend request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/stats/{address}": {
+            "get": {
+                "description": "Get UTXO statistics for a specific Bitcoin address",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Statistics"
+                ],
+                "summary": "Get statistics for address",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bitcoin address",
+                        "name": "address",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Statistics",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/utxos/{address}": {
+            "get": {
+                "description": "Get all unspent transaction outputs for a specific Bitcoin address",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "UTXOs"
+                ],
+                "summary": "Get UTXOs for address",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bitcoin address",
+                        "name": "address",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of UTXOs",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.MultiSelectRequest": {
+            "type": "object",
+            "required": [
+                "addresses",
+                "amount"
+            ],
+            "properties": {
+                "addresses": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "amount": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "fee_rate": {
+                    "description": "satoshis per byte",
+                    "type": "integer"
+                },
+                "strategy": {
+                    "$ref": "#/definitions/models.SelectStrategy"
+                }
+            }
+        },
+        "models.SelectStrategy": {
+            "type": "string",
+            "enum": [
+                "optimize_fee",
+                "optimize_fee_1",
+                "optimize_fee_2",
+                "optimize_fee_3",
+                "optimize_fee_4",
+                "optimize_fee_5",
+                "optimize_fee_6",
+                "privacy",
+                "consolidation",
+                "default"
+            ],
+            "x-enum-comments": {
+                "StrategyOptimizeFee1": "Effective Value",
+                "StrategyOptimizeFee2": "Branch and Bound",
+                "StrategyOptimizeFee3": "Knapsack DP",
+                "StrategyOptimizeFee4": "Single Random Draw",
+                "StrategyOptimizeFee5": "Accumulative",
+                "StrategyOptimizeFee6": "Genetic Algorithm"
+            },
+            "x-enum-descriptions": [
+                "",
+                "Effective Value",
+                "Branch and Bound",
+                "Knapsack DP",
+                "Single Random Draw",
+                "Accumulative",
+                "Genetic Algorithm",
+                "",
+                "",
+                ""
+            ],
+            "x-enum-varnames": [
+                "StrategyOptimizeFee",
+                "StrategyOptimizeFee1",
+                "StrategyOptimizeFee2",
+                "StrategyOptimizeFee3",
+                "StrategyOptimizeFee4",
+                "StrategyOptimizeFee5",
+                "StrategyOptimizeFee6",
+                "StrategyPrivacy",
+                "StrategyConsolidation",
+                "StrategyDefault"
+            ]
+        },
+        "models.SelectUTXORequest": {
+            "type": "object",
+            "required": [
+                "address",
+                "amount"
+            ],
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "amount": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "fee_rate": {
+                    "description": "satoshis per byte",
+                    "type": "integer"
+                },
+                "strategy": {
+                    "$ref": "#/definitions/models.SelectStrategy"
+                }
+            }
+        },
+        "models.SelectUTXOResponse": {
+            "type": "object",
+            "properties": {
+                "change": {
+                    "type": "integer"
+                },
+                "estimated_fee": {
+                    "type": "integer"
+                },
+                "num_inputs": {
+                    "type": "integer"
+                },
+                "selected_utxos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.UTXO"
+                    }
+                },
+                "total_value": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.UTXO": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "block_height": {
+                    "type": "integer"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "script_pubkey": {
+                    "type": "string"
+                },
+                "spent": {
+                    "type": "boolean"
+                },
+                "spent_at": {
+                    "type": "string"
+                },
+                "spent_txid": {
+                    "type": "string"
+                },
+                "txid": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "integer"
+                },
+                "vout": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
