@@ -36,7 +36,7 @@ export default function RootLayout({
 
 					<Header />
 					<main className="flex-1 overflow-auto">
-						<div className="mx-auto max-w-full xl:max-w-10xl px-4 sm:px-6 lg:px-8 py-6 min-h-full">
+						<div className="mx-auto max-w-full md:max-w-8xl xl:max-w-10xl px-4 sm:px-6 lg:px-8 py-6 min-h-full">
 							{children}
 						</div>
 					</main>
