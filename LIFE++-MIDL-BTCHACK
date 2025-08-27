@@ -1,0 +1,116 @@
+# LIFE++-MIDL-BTCHACK
+
+
+---
+
+# 📝 BTC Hack Project Submission
+
+---
+
+## 1. Project Overview
+
+**Project Track:**
+👉 Track 2: Rune-powered Midl x Xverse Solidity dApp
+
+**Short Description:**
+Life++ RWA Vault is an AI-powered Bitcoin-native collateral system.
+Users upload Real-World Asset (RWA) proofs → AI analyzes risks → PoC validates trust → approved assets can be deposited as collateral into a Bitcoin vault using Midl.js and Xverse wallet.
+It enables decentralized, data-driven trust scoring for RWA in Bitcoin finance.
+
+---
+
+## 2. Repository & Demo
+
+* **GitHub Repository:** [https://github.com/Dropineth/LIFE-MIDL-BTCHACK/blob/main/demo.html](https://github.com/Dropineth/LIFE-MIDL-BTCHACK/blob/main/demo.html)
+* **Demo Link:** [https://lifeplusplus-demo.vercel.app](https://lifeplusplus-demo.vercel.app)
+
+---
+
+## 3. Features & Tech Stack
+
+**Key Features:**
+
+* 🤖 **AI RWA Risk Scoring** – asset documents/images analyzed by ML model for credibility
+* 🔐 **PoC Validation Layer** – generates trust score and proof for Bitcoin-native settlement
+* 💰 **Vault Contract Integration** – deposit/withdraw with Xverse Wallet on Bitcoin Regtest via Midl.js
+* 📊 **Visual Dashboard** – real-time gauge charts for risk & trust scores, balances, and transactions
+* 🔄 **Resilient Architecture** – works with live Midl.js infra, but falls back to demo mode if network unavailable
+
+**Tech Stack:**
+
+* **Frontend:** React, TailwindCSS, Recharts (Gauge charts), ethers.js, useContract hooks
+* **Backend:** FastAPI (AI Scoring), Node.js (PoC Service), Midl.js SDK for BTC infra
+* **Other:** Hardhat (Solidity contracts), Docker (multi-service setup), Xverse Wallet, SatoshiKit
+
+---
+
+## 4. Getting Started
+
+**Prerequisites:**
+
+* Node.js v18+
+* Python 3.9+
+* Docker & Docker Compose (optional, for quick full-stack demo)
+* Metamask / Xverse wallet (testnet)
+
+**Installation steps:**
+
+```bash
+# Clone repo
+git clone https://github.com/Dropineth/LIFE-MIDL-BTCHACK
+cd rwa-vault
+
+# Install dependencies
+npm install
+cd backend && pip install -r requirements.txt
+
+# Compile contracts
+npx hardhat compile
+
+# Deploy contracts
+npx hardhat run scripts/deploy.js --network regtest
+```
+
+**Run / Demo:**
+
+```bash
+# Start AI scoring service
+cd backend/ai && uvicorn main:app --reload --port 8000
+
+# Start PoC validation service
+cd backend/poc && npm run start
+
+# Start frontend
+cd frontend && npm run dev
+```
+
+Then open:
+👉 `http://localhost:3000`
+
+Upload RWA file → See Risk/Trust score → Deposit via Xverse → View Vault balance & TX hash.
+
+---
+
+## 5. Team Information
+
+| Name       | Telegram Handle | Email Address                                      |
+| ---------- | --------------- | -----------------------------------------------    |
+| Lee Zhang  | @Leedoovvv      | [dropineth@gmail.com](mailto:dropineth@gmail.com)  |
+| Somelty Liu| @Kenya Lopez    | [yaminliu47@gmail.com](mailto:yaminliu47@gmail.com)|
+
+
+---
+
+## 6. Additional Resources
+
+* **Documentation:** 
+* **Slides:** 
+* **Demo Video:**
+
+---
+
+⚡️ **Value for BTC Ecosystem:**
+Life++ RWA Vault expands Bitcoin DeFi beyond pure BTC by bringing **AI-driven trust scoring for RWA collateral**.
+It’s a **hybrid infra**: connects AI/real-world → PoC validation → Bitcoin vault contracts, with a smooth **demo-first UX** for hackathon judging.
+
+---
